@@ -1,0 +1,184 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+  }
+  
+  .formContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: transparent;
+    z-index: 1;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .heading {
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .label {
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .input {
+    height: 48px;
+    width: 300px;
+    padding: 16px;
+    border: #0D0D0D;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #cfeaec;
+  }
+  
+  .forgotPassword {
+    margin-top: 16px;
+    font-size: 15px;
+    color: #666;
+  }
+  .forgotPassword:hover{
+    color: red;
+  }
+  
+  .submitButton {
+    margin-top: 24px;
+    height: 48px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    background: rgb(214, 13, 53);
+    cursor: pointer;
+  }
+  
+  .submitButton:hover{
+    animation: changeBackground .1s forwards;
+  }
+
+  @keyframes changeBackground {
+    0% {
+      background: rgb(214, 13, 53);
+    }
+    99% {
+      background: rgb(214, 13, 53);
+    }
+    100% {
+      background: linear-gradient(#FF0000, #6D0101);
+    }
+  }
+  
+  
+  .registerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  
+  .registerText {
+    margin-right: 8px;
+    color: #666;
+  }
+  .registerLink {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .registerLink:hover{
+    color: red;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+  }
+  
+  .ball{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    left: -100px;
+    margin-top: -430px;
+    border-radius: 919px;
+
+    transform: rotate(135deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .ball1{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    right: -70px;
+    margin-bottom: -800px;
+    border-radius: 919px;
+
+    transform: rotate(-63.18deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .ball2{
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    right: -300px;
+    margin-top: -900px;
+    border-radius: 919px;
+
+    transform: rotate(290deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .ball3{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    left: -140px;
+    margin-bottom: -800px;
+    border-radius: 919px;
+
+    transform: rotate(90deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .logo{
+    margin-bottom: 5px;
+  }
