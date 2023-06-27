@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+  }
+  
+  .formContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: transparent;
+    z-index: 1;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .heading {
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .label {
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .input {
+    height: 48px;
+    width: 300px;
+    padding: 16px;
+    border: #0D0D0D;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #cfeaec;
+  }
+  
+  .forgotPassword {
+    margin-top: 16px;
+    font-size: 15px;
+    color: #666;
+  }
+  .forgotPassword:hover{
+    color: red;
+  }
+  
+  .submitButton {
+    margin-top: 24px;
+    height: 48px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    background: rgb(214, 13, 53);
+    cursor: pointer;
+  }
+  
+  .submitButton:hover{
+    animation: changeBackground .1s forwards;
+  }
+
+  @keyframes changeBackground {
+    0% {
+      background: rgb(214, 13, 53);
+    }
+    99% {
+      background: rgb(214, 13, 53);
+    }
+    100% {
+      background: linear-gradient(#FF0000, #6D0101);
+    }
+  }
+  
+  
+  .registerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  
+  .registerText {
+    margin-right: 8px;
+    color: #666;
+  }
+  .registerLink {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .registerLink:hover{
+    color: red;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+  }
+  
+  .ball{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    left: -100px;
+    margin-top: -430px;
+    border-radius: 919px;
+
+    transform: rotate(135deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .ball1{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    right: -70px;
+    margin-bottom: -800px;
+    border-radius: 919px;
+
+    transform: rotate(-63.18deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .ball2{
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    right: -300px;
+    margin-top: -900px;
+    border-radius: 919px;
+
+    transform: rotate(290deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .ball3{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    left: -140px;
+    margin-bottom: -800px;
+    border-radius: 919px;
+
+    transform: rotate(90deg);
+    background: linear-gradient(rgba(255, 0, 0, 0.637), rgba(0, 0, 0, 0), black);
+  }
+
+  .logo{
+    margin-bottom: 5px;
+  }
+  
+  .reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .btn9 {
+    position: relative;
+    padding: 20px 50px;
+    display: flex;
+    width: 170px;
+    transform: scale(1.3);
+    overflow: hidden;
+    border-radius: 25px;
+    border: none;
+    background: rgba(20, 20, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    margin: 30px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.4), 10px 10px rgba(0, 0, 0, 0.3),
+      15px 15px rgba(0, 0, 0, 0.2), 20px 20px rgba(0, 0, 0, 0.1),
+      25px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn9Text {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 6px;
+    z-index: 1;
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+  }
+  
+  .btn9Liquid {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #f02424;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+  }
+  
+  .btn9Liquid::after,
+  .btn9Liquid::before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+  }
+  
+  .btn9Liquid::before {
+    border-radius: 45%;
+    background: #141414;
+    animation: btn9Animate 12s linear infinite;
+  }
+  
+  .btn9Liquid::after {
+    border-radius: 40%;
+    background: rgba(20, 20, 20, 0.5);
+    animation: animate 15s linear infinite;
+  }
+  
+  .btn9:hover .btn9Liquid {
+    top: 20px;
+  }
+  
+  .btn9d:hover .btn9Liquid,
+  .btn9e:hover .btn9Liquid,
+  .btn9f:hover .btn9Liquid {
+    top: -120px;
+  }
+  
+  .btn9c,
+  .btn9f {
+    border-radius: 5px;
+  }
+  
+  @keyframes btn9Animate {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+  
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+  

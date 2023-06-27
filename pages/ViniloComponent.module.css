@@ -1,0 +1,221 @@
+/* Ellipse 1 */
+
+.E1{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    border-radius: 919px;
+
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+}
+
+/* Ellipse 2 */
+
+.E2{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 3.12%;
+    right: 3.12%;
+    top: 3.12%;
+    bottom: 3.12%;
+    border-radius: 919px;
+
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;
+}
+
+/* Ellipse 3 */
+
+.E3{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 6.25%;
+    right: 6.25%;
+    top: 6.25%;
+    bottom: 6.25%;
+    border-radius: 919px;
+
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;
+}
+
+/* Ellipse 4 */
+
+.E4{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 9.38%;
+    right: 9.38%;
+    top: 9.38%;
+    bottom: 9.38%;
+    border-radius: 919px;
+
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;
+}
+
+/* Ellipse 5 */
+
+.E5{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 12.5%;
+    right: 12.5%;
+    top: 12.5%;
+    bottom: 12.5%;
+    border-radius: 919px;
+
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;
+}
+
+/* Ellipse 6 */
+
+.E6{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 15.62%;
+    right: 15.62%;
+    top: 15.62%;
+    bottom: 15.62%;
+    border-radius: 919px;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;
+}
+
+/* Ellipse 7 */
+
+.E7{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 18.75%;
+    right: 18.75%;
+    top: 18.75%;
+    bottom: 18.75%;
+    border-radius: 919px;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;    
+}
+
+/* Ellipse 8 */
+
+.E8{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 21.88%;
+    right: 21.88%;
+    top: 21.88%;
+    bottom: 21.88%;
+    border-radius: 919px;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;
+}
+
+/* Ellipse 9 */
+
+.E9{
+    position: absolute;
+    left: 31.25%;
+    right: 31.25%;
+    top: 31.25%;
+    bottom: 31.25%;
+    border-radius: 919px;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, #B60000 53.12%, #810000 100%, #2F0000 100%);
+}
+
+/* Ellipse 10 */
+
+.E10{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 48.75%;
+    right: 48.75%;
+    top: 48.75%;
+    bottom: 48.75%;
+    border-radius: 919px;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #060606 100%);
+    border: 5px solid #111111;
+}
+
+/* Ellipse 11 */
+
+.E11{
+    box-sizing: border-box;
+
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    left: 34.38%;
+    right: 34.38%;
+    top: 34.38%;
+    bottom: 34.38%;
+    border-radius: 919px;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, #B60000 53.12%, #810000 100%, #2F0000 100%);
+    border: 2px solid #000000;
+}
+
+/* Rectangle 1 */
+
+.Rectangle1{
+    position: relative;
+    border: 2px solid rgb(255, 255, 255);
+    width: 130px;
+    height: 100px;
+    left: 250px;
+    top: 270px;
+    border-radius: 90px;
+    
+    background: rgba(255, 255, 255, 0.11);
+    mix-blend-mode: hard-light;
+    box-shadow: inset 0px 4px 250px rgba(255, 255, 255, 0.25);
+    filter: blur(60px);
+    transform: rotate(-45deg);
+}
+
+/* Rectangle 2 */
+
+.Rectangle2{
+    position: relative;
+    border: 2px solid rgb(255, 255, 255);
+    width: 130px;
+    height: 100px;
+    left: 110px;
+    bottom: 80px;
+    border-radius: 90px;
+    
+    background: rgba(255, 255, 255, 0.11);
+    mix-blend-mode: hard-light;
+    box-shadow: inset 0px 4px 250px rgba(255, 255, 255, 0.25);
+    filter: blur(60px);
+    transform: rotate(-45deg);
+  }
+
+  .img{
+    margin-top: 6px;
+    animation: rotate 7s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(0.7);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.7);
+  }
+}

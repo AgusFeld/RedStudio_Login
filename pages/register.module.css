@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC');
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(180deg, #131313 100%, rgba(22, 22, 22, 0) 100%);
+  }
+
+  .formContainer{
+    position: relative;
+    width: 600px;
+    height: 550px;
+    left: 75px;
+    
+    background: linear-gradient(180deg, #942727 0%, #220101 100%);
+    border-radius: 7px;
+    border-left: solid #000000 1px;
+  }
+
+  .vinilo{
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    left: 235px;
+  }
+
+  .lengueta2{
+    position: fixed;
+    width: 600px;
+    height: 550px;
+    left: 140px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .heading {
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-bottom: 16px;
+  }
+  
+  .label {
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .login {
+    margin-bottom: 10px;
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .input {
+    height: 48px;
+    width: 300px;
+    padding: 16px;
+    border: #0D0D0D;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #cfeaec;
+  }
+  
+  .forgotPassword {
+    margin-top: 16px;
+    font-size: 15px;
+    color: #666;
+  }
+  .forgotPassword:hover{
+    color: red;
+  }
+  
+  .registerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  
+  .registerText {
+    margin-right: 8px;
+    color: #666;
+  }
+  .registerLink {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .registerLink:hover{
+    color: red;
+  }
+
+  .submitbtn {
+    margin-top: 24px;
+    height: 48px;
+    width: 40%;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(219, 18, 18);
+    
+    cursor: pointer;
+    transition: background-color .4s;
+  }
+  
+  .submitbtn:hover {
+    background-color: rgb(180, 10, 10);
+  }
+
