@@ -1,55 +1,65 @@
 import React from "react";
 import { useRouter } from "next/router";
-import styles from "./Login.module.css";
-import ViniloComponent from "./viniloComponent";
+import styles from "./landing.module.css"
+import Boton from "./botonComponent"
 
-const LoginPage: React.FC = () => {
-  const router = useRouter();
+const Landing: React.FC = () => {
+    const router = useRouter();
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    router.push("/register");
-  };
+    const signUp = (event: React.FormEvent) => {
+        event.preventDefault();
+        router.push("/register");
+      };
+    
+    const signIn = (event: React.FormEvent) => {
+        event.preventDefault();
+        router.push("/login");
+      };
 
-    return (
-      <div className={styles.container}>
-        <img className={styles.lengueta} src="lenguetaCaja.svg"></img>
-        <div className={styles.containerVinilo}>
-          <ViniloComponent />
+    return(
+        <div className={styles.container}>
+            <div className={styles.bar}>
+                <img className={styles.logo} src="Logo.png"></img>
+                <div className={styles.div2}>
+                    <a href="#">
+                        <button className={styles.text}>
+                            Create Music
+                        </button>
+                    </a>
+                </div>
+                <div className={styles.div3}>
+                    <a href="login">
+                        <button className={styles.text1}>
+                            Sign In
+                        </button>
+                    </a>
+                </div>
+                <div className={styles.div1}>
+                    <a href="register">
+                        <button className={styles.boton}>
+                            Sign Up
+                        </button>
+                    </a>
+                </div> 
+            </div>
+            <div className={styles.background}>
+                <img className={styles.img1} src="img1.png"></img>
+                <div className={styles.div4}>
+                    <a href="#">
+                        <button className={styles.btn}>
+                            Create Music
+                        </button>
+                    </a>
+                </div>
+                <img className={styles.img2} src="img2.png"></img>
+                <img className={styles.img3} src="img3.png" />
+                <img className={styles.img4} src="img4.png" />
+                <img className={styles.img5} src="img5.png" />
+                <img className={styles.img6} src="img6.png" />
+            </div>
+            <div className={styles.foot}></div>
         </div>
-        <div className={styles.formContainer}>
-          <form className={styles.form}>
-            <img className={styles.login} src="Logo.png"></img>
-            <div className={styles.inputGroup}>
-              <label className={styles.label} htmlFor="username">
-                Usuario
-              </label>
-              <input className={styles.input} type="text" name="username" />
-            </div>
-            <div className={styles.inputGroup}>
-              <label className={styles.label} htmlFor="password">
-                Contraseña
-              </label>
-              <input className={styles.input} type="password" name="password" />
-            </div>
-            <div className={styles.forgotPassword}>
-              <a href="#">Recuperar Contraseña</a>
-            </div>
-            <button className={styles.submitbtn}>
-              Login
-            </button>
-          </form>
-          <form className={styles.registerContainer}  onSubmit={handleSubmit}>
-            <span className={styles.registerText}>
-              No tenes una cuenta?
-            </span>
-            <button className={styles.registerLink} type="submit">
-              Registrate
-            </button>
-          </form>
-        </div>
-      </div>
     );
-  };
-  
-  export default LoginPage;
+};
+
+export default Landing;

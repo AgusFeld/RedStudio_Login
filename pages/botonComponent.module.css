@@ -1,0 +1,20 @@
+.boton {
+    margin-top: 24px;
+    height: 48px;
+    width: 40%;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(219, 18, 18);
+    
+    cursor: pointer;
+    transition: background-color .4s;
+  }
+  
+  .boton:hover {
+    background-color: rgb(180, 10, 10);
+  }
