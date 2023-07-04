@@ -56,8 +56,40 @@ const Landing: React.FC = () => {
                 <img className={styles.img4} src="img4.png" />
                 <img className={styles.img5} src="img5.png" />
                 <img className={styles.img6} src="img6.png" />
+                <div className={styles.div5}>
+                    <a href="#">
+                        <button className={styles.btn}>
+                            Listen
+                        </button>
+                    </a>
+                </div>
+                <div className={styles.foot}>
+                    <div className={styles.column}>
+                        <ul>
+                            <li>About Us</li>
+                            <li>Comunicate</li>
+                            <li>Mail: </li>
+                        </ul>
+                    </div>
+                    <div className={styles.column}>
+                        <ul>
+                            <li>Término de Servicio</li>
+                            <li>Privacidad</li>
+                            <li>Telefono: </li>
+                        </ul>
+                    </div>
+                    <div className={styles.column}>
+                        <ul>
+                            <li>Aviso de Cookies</li>
+                            <li>RedStudio Latinoámerica Sur</li>
+                            <li>Sitemap</li>
+                        </ul>
+                    </div>
+                    <div className={styles.footerText}>
+                        Copyright © 2023 RedStudioProyect. Todos los derechos reservados.
+                    </div>
+                </div>
             </div>
-            <div className={styles.foot}></div>
         </div>
     );
 };

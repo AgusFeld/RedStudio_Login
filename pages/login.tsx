@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react';
 import { useRouter } from "next/router";
 import styles from "./Login.module.css";
 import ViniloComponent from "./viniloComponent";
@@ -6,9 +7,39 @@ import ViniloComponent from "./viniloComponent";
 const LoginPage: React.FC = () => {
   const router = useRouter();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const change = (event: React.FormEvent) => {
     event.preventDefault();
     router.push("/register");
+  };
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        alert('Inicio de sesión exitoso');
+        setEmail('');
+        setPassword('');
+      }
+      else {
+        const data = await response.json();
+        throw new Error(data.error || 'Ocurrió un error al iniciar sesión');
+      }
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      alert('Ocurrió un error al iniciar sesión');
+    }
   };
 
     return (
@@ -18,32 +49,40 @@ const LoginPage: React.FC = () => {
           <ViniloComponent />
         </div>
         <div className={styles.formContainer}>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <img className={styles.login} src="Logo.png"></img>
             <div className={styles.inputGroup}>
-              <label className={styles.label} htmlFor="username">
-                Usuario
+              <label className={styles.label} htmlFor="email">
+                Email
               </label>
-              <input className={styles.input} type="text" name="username" />
+              <input className={styles.input} 
+                type="email" 
+                id="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className={styles.inputGroup}>
               <label className={styles.label} htmlFor="password">
                 Contraseña
               </label>
-              <input className={styles.input} type="password" name="password" />
+              <input className={styles.input}
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className={styles.forgotPassword}>
               <a href="#">Recuperar Contraseña</a>
             </div>
-            <button className={styles.submitbtn}>
+            <button className={styles.submitbtn} type="submit">
               Login
             </button>
           </form>
-          <form className={styles.registerContainer}  onSubmit={handleSubmit}>
+          <form className={styles.registerContainer} onSubmit={change}>
             <span className={styles.registerText}>
               No tenes una cuenta?
             </span>
-            <button className={styles.registerLink} type="submit">
+            <button className={styles.registerLink}>
               Registrate
             </button>
           </form>
