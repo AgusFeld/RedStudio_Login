@@ -4,6 +4,7 @@ import { sign } from "jsonwebtoken";
 import { serialize } from "cookie";
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
+import { v4 as uuidv4 } from 'uuid';
 dotenv.config();
 
 const secretKey = process.env.SECRET;
@@ -28,6 +29,15 @@ export default async function handler(
       }
 
       const token = sign({ userId: user.id }, secretKey as string, { expiresIn: '1h' });
+
+      // Generar una cookie única
+      const cookieToken = uuidv4();
+
+      // Guardar la cookie única en la base de datos
+      await prisma.users.update({
+        where: { id: user.id },
+        data: { cookieToken },
+      });
 
       const cookie = serialize('token', token, {
         httpOnly: true,
