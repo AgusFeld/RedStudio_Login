@@ -1,10 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
-import { sign } from "jsonwebtoken";
-import { serialize } from "cookie";
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
-import { v4 as uuidv4 } from 'uuid';
 dotenv.config();
 
 const secretKey = process.env.SECRET;
@@ -27,26 +24,7 @@ export default async function handler(
       if (!passwordMatch) {
         return res.status(401).json({ error: 'Contraseña incorrecta' });
       }
-
-      const token = sign({ userId: user.id }, secretKey as string, { expiresIn: '1h' });
-
-      // Generar una cookie única
-      const cookieToken = uuidv4();
-
-      // Guardar la cookie única en la base de datos
-      await prisma.users.update({
-        where: { id: user.id },
-        data: { cookieToken },
-      });
-
-      const cookie = serialize('token', token, {
-        httpOnly: true,
-        maxAge: 60 * 60, 
-        path: '/',
-      });
-
-      res.setHeader('Set-Cookie', cookie);
-
+      
       return res.status(200).json({ message: 'Inicio de sesión exitoso' });
     } catch (error) {
       console.error('Error al iniciar sesión:', error);

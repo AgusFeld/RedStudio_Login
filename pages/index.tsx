@@ -14,14 +14,19 @@ const Landing: React.FC = () => {
     const signIn = (event: React.FormEvent) => {
         event.preventDefault();
         router.push("/login");
-      };
+     
+    };
+    const music = (event: React.FormEvent) => {
+        event.preventDefault();
+        router.push("/music");
+    };
 
     return(
         <div className={styles.container}>
             <div className={styles.bar}>
                 <img className={styles.logo} src="Logo.png"></img>
                 <div className={styles.div2}>
-                    <a href="#">
+                    <a href="music">
                         <button className={styles.text}>
                             Create Music
                         </button>
