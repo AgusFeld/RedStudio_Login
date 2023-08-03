@@ -16,13 +16,13 @@ export default async function handler(
         select: { genre : true, file : true, name : true }
      });
      if (UserHistExist)
-     return res.status(999).json({ error : 'canciones recolectadas' })
+     return res.status(200).json(UserHistExist);
      else{
         return res.status(200).json({error:'no se encontro al usuario'})
      }
     }
     catch (error) {
-      return res.status(500).json({ error: 'Ocurrió un error al recuperar la musica del usuario' });
+      return res.status(400).json({ error: 'Ocurrió un error al recuperar la musica del usuario' });
     }
   }
 
