@@ -29,27 +29,14 @@ export default async function handler(
         return res.status(401).json({ error: 'Contraseña incorrecta' });
       }
 
-      const payload = {
-        id: 'userMail',
-        email: email,
-      };
-      
-      jwt.sign(
-        payload,
-        key,
-        {
-          expiresIn: 1972308,
-        },
-        (err, token) => {
-          
-          res.status(200).json({
-            success: true,
-            token: 'Bearer ' + token,
-          });
-        },
+      const token = jwt.sign({ email }, key);
+
+      res.setHeader(
+        'Set-Cookie',
+        `token=${token}; HttpOnly; Path=/; Max-Age=${3600 * 24 * 7}`
       );
-      
-      return res.status(200).json({ message: 'Inicio de sesión exitoso' });
+
+      return res.status(200).json({message:'inicio de sesion exitoso'});
 
     } catch (error) {
 
