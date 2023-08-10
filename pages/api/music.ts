@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
-import authMiddleware from './authMiddleware';
+import { authMiddleware } from './authMiddleware';
 
 const prisma = new PrismaClient();
 
@@ -29,4 +29,3 @@ async function handler(
   return res.status(405).json({ error: 'Método no permitido' });
 }
 
-export default authMiddleware(handler);

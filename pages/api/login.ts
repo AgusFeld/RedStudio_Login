@@ -29,7 +29,7 @@ export default async function handler(
         return res.status(401).json({ error: 'Contraseña incorrecta' });
       }
 
-      const token = jwt.sign({ email }, key);
+      const token = jwt.sign({email: req.body.email}, key);
 
       res.setHeader(
         'Set-Cookie',

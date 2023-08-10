@@ -3,30 +3,20 @@ import jwt from 'jsonwebtoken';
 
 const key = process.env.SECRETKEY as string;
 
-export interface DecodedToken {
-  email: string;
-}
-
-declare module 'next' {
-  interface NextApiRequest {
-    user?: DecodedToken; 
-  }
-}
-
-export default function authMiddleware(handler: Function) {
-  return async (req: NextApiRequest, res: NextApiResponse) => {
+export function authMiddleware(req: NextApiRequest, res: NextApiResponse) {
     const token = req.cookies.token;
 
     if (!token) {
-      return res.redirect('/login');
+      return res.status(405).json({message:'Sin autorizacion - No Token'});
     }
-
-    try {
-      const decoded = jwt.verify(token, key) as DecodedToken;
-      req.user = decoded;
-      return handler(req, res);
-    } catch (error) {
-      return res.redirect('/login');
+    else{
+    try{
+    const decoded = jwt.verify(token, key);
+      return res.status(200).json({message:'inicio de sesion exitoso'});
+      req.email = decoded.email
     }
-  };
+    catch(error){
+      return res.status(405).json({message:'Wrong Token'})
+    }
+    }
 }
