@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #282828;
+
+  .formContainer{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 60%;
+  }
+
+  .botones{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .column{
+    display: flex;
+    width: 45%;
+    height: 50vh;
+    background: white;
+    border-radius: 5px;
+  }
