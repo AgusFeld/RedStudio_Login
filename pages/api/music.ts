@@ -4,11 +4,11 @@ import { authMiddleware } from './authMiddleware';
 
 const prisma = new PrismaClient();
 
-async function handler(
+export async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
     const { email } = req.body;
 
     try {
@@ -28,4 +28,3 @@ async function handler(
 
   return res.status(405).json({ error: 'Método no permitido' });
 }
-
