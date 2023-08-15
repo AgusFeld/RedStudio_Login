@@ -11,9 +11,9 @@
 
   .formContainer{
     position: relative;
-    width: 600px;
-    height: 550px;
-    left: -407px;
+    width: 44%;
+    height: 89vh;
+    left: -29.8%;
     
     background: linear-gradient(180deg, #942727 0%, #220101 100%);
     border-radius: 7px;
@@ -21,9 +21,9 @@
 
   .containerVinilo{
     position: absolute;
-    width: 450px;
-    height: 450px;
-    left: 650px;
+    width: 33%;
+    height: 73%;
+    left: 47.5%;
     
     background: transparent;
 }
@@ -36,23 +36,17 @@
     width: 100%;
   }
   
-  .heading {
-    margin-bottom: 24px;
-    font-size: 32px;
-    font-weight: bold;
-  }
-
   .inputGroup {
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin-bottom: 16px;
+    margin-bottom: 3vh;
   }
   
   .label {
-    margin-bottom: 8px;
-    margin-top: 10px;
-    font-size: 14px;
+    margin-bottom: 3%;
+    margin-top: 5%;
+    font-size: 100%;
     font-weight: bold;
     color: white;
   }
@@ -129,9 +123,9 @@
 
 .lengueta{
     position: relative;
-    width: 600px;
-    height: 550px;
-    left: 500px;
+    width: 43.8%;
+    height: 89vh;
+    left: 35%;
 }
  
 
