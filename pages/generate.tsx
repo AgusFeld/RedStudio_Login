@@ -13,8 +13,11 @@ const Generate: React.FC = () => {
                 </div>
                 <div className={styles.botones}>
                     <div className={styles.column}>
-                        <select className={styles.btn}>
-                            <option value="Pop">Pop</option>
+                        <select required className={styles.btn} placeholder="Género">
+                            <option value="" disabled selected hidden>Género</option>
+                            <option value="">Pop</option>
+                            <option value="">Rock</option>
+                            <option value="">Electrónica</option>
                         </select>
                         <button className={styles.btn}>Duración</button>
                         <button className={styles.btn}>Escala</button>
