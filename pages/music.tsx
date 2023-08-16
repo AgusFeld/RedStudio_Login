@@ -1,40 +1,58 @@
-import React from "react";
-import { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const key = process.env.SECRETKEY as string;
-
-const LoginPage: React.FC = () => {
+const MusicPage: React.FC = () => {
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const [authenticated, setAuthenticated] = useState(false);
+  const [userData, setUserData] = useState<any>(null); 
 
-    try {
-      const response = await fetch('/api/authMiddleware', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email : 'gaspar@gmail.com', key }),
-      });
-
-      if (response.ok) {
-        alert('Inicio de sesión exitoso');
-      }
-      else {
-        const data = await response.json();
-        throw new Error(data.error || 'Ocurrió un error al iniciar sesión');
-      }
-    } catch (error) {
-      console.error('Error al iniciar sesión:', error);
-      alert('Ocurrió un error al iniciar sesión');
-    }
-  };
-
-    return (
-      <h1>hola</h1>
-    );
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/music', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        });
   
-  export default LoginPage;
+        console.log('Respuesta del servidor:', response);
+  
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Datos del usuario:', data);
+          setUserData(data);
+          setAuthenticated(true);
+        } else {
+          console.error('Error en la respuesta del servidor:', response);
+          router.push('/login');
+        }
+      } catch (error) {
+        console.error('Error al obtener datos de usuario:', error);
+        router.push('/login');
+      }
+    };
+  
+    fetchData();
+  }, []);
+
+  if (!authenticated) {
+    return <p>Redirigiendo...</p>;
+  }
+
+  return (
+    <div>
+      <h1>Página de Música</h1>
+      {userData && (
+        <div>
+          <p>Nombre: {userData.name}</p>
+          <p>Correo electrónico: {userData.email}</p>
+          {/* Otros datos de usuario */}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default MusicPage;
