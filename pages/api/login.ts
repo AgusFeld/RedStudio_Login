@@ -31,12 +31,14 @@ export default async function handler(
 
       const token = jwt.sign({email: req.body.email}, key);
 
+      console.log(token)
+
       res.setHeader(
         'Set-Cookie',
         `token=${token}; HttpOnly; Path=/; Max-Age=${3600 * 24 * 7}`
-      );
+      );  
 
-      return res.status(200).json({message:'inicio de sesion exitoso'});
+      return res.status(200).json({message:'inicio de sesion exitoso', token : token});
 
     } catch (error) {
 

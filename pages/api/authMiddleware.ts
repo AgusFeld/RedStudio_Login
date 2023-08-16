@@ -3,26 +3,37 @@ import jwt from 'jsonwebtoken';
 
 const key = process.env.SECRETKEY as string;
 
-interface ExtendedNextApiRequest extends NextApiRequest{
-  email: string
+interface ExtendedNextApiRequest extends NextApiRequest {
+  email?: string;
 }
 
-export function authMiddleware(req: ExtendedNextApiRequest, res: NextApiResponse) {
-    const token = req.cookies.token;
+export async function authMiddleware(
+  req: ExtendedNextApiRequest,
+  res: NextApiResponse,
+  handler: (req: ExtendedNextApiRequest, res: NextApiResponse) => Promise<any>
+) {
 
-    if (!token) {
-      return res.status(405).json({message:'Sin autorizacion - No Token'});
-    }
-    else{
-    try{
-    const decoded = jwt.verify(token, key) as { email: string };
+  console.log(req.headers.authorization)
 
-      req.email = decoded.email
+  const authorizationToken = req.headers.authorization as string;
 
-      return res.status(200).json({message:'inicio de sesion exitoso'});
+  const token = authorizationToken.split(' ')[1];
+
+
+  if (!token) {
+    console.log('no hay token');
+    res.writeHead(302, { Location: '/login' });
+    return res.end();
+  } else {
+    try {
+      const decoded = jwt.verify(token, key) as { email: string };
+      console.log('Token decodificado:', decoded);
+      req.email = decoded.email;
+      return handler(req, res);
+    } catch (error) {
+      console.error('Error al verificar el token:', error);
+      res.writeHead(302, { Location: '/login' });
+      return res.end();
     }
-    catch(error){
-      return res.status(405).json({message:'Wrong Token'})
-    }
-    }
+  }
 }
