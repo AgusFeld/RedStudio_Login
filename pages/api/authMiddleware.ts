@@ -12,26 +12,26 @@ export async function authMiddleware(
   res: NextApiResponse,
   handler: (req: ExtendedNextApiRequest, res: NextApiResponse) => Promise<void>
 ) {
-  console.log('Authorization header:', req.headers.authorization); // Debug
+  console.log('Authorization header:', req.headers.authorization); 
 
   const authorizationToken = req.headers.authorization as string;
 
   const token = authorizationToken.split(' ')[1];
 
-  console.log('Token:', token); // Debug
+  console.log('Token:', token); 
 
   if (!token) {
-    console.log('No hay token'); // Debug
+    console.log('No hay token'); 
     res.writeHead(302, { Location: '/login' });
     return res.end();
   } else {
     try {
       const decoded = jwt.verify(token, key) as { email: string };
-      console.log('Token decodificado:', decoded); // Debug
+      console.log('Token decodificado:', decoded);
       req.email = decoded.email;
-      await handler(req, res); // Invocar el handler sin return
+      await handler(req, res); 
     } catch (error) {
-      console.error('Error al verificar el token:', error); // Debug
+      console.error('Error al verificar el token:', error); 
       res.writeHead(302, { Location: '/login' });
       return res.end();
     }
