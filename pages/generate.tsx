@@ -13,19 +13,56 @@ const Generate: React.FC = () => {
                 </div>
                 <div className={styles.botones}>
                     <div className={styles.column}>
-                        <select required className={styles.btn} placeholder="Género">
-                            <option value="" disabled selected hidden>Género</option>
-                            <option value="">Pop</option>
-                            <option value="">Rock</option>
-                            <option value="">Electrónica</option>
-                        </select>
-                        <button className={styles.btn}>Duración</button>
-                        <button className={styles.btn}>Escala</button>
+                        <div className={styles.customSelect}>
+                            <select required className={styles.btn} placeholder="Género">
+                                <option value="" disabled selected hidden>Género</option>
+                                <option value="">Pop</option>
+                                <option value="">Rock</option>
+                                <option value="">Electrónica</option>
+                            </select>
+                        </div>
+                        <div className={styles.customSelect}>
+                            <select required className={styles.btn} placeholder="Género">
+                                <option value="" disabled selected hidden>Duración</option>
+                                <option value="">Pop</option>
+                                <option value="">Rock</option>
+                                <option value="">Electrónica</option>
+                            </select>
+                        </div>
+                        <div className={styles.customSelect}>
+                            <select required className={styles.btn} placeholder="Género">
+                                <option value="" disabled selected hidden>Escala</option>
+                                <option value="">Pop</option>
+                                <option value="">Rock</option>
+                                <option value="">Electrónica</option>
+                            </select>
+                        </div>
                     </div>
                     <div className={styles.column}>
-                        <button className={styles.btn}>Instrumentos</button>
-                        <button className={styles.btn}>Tempo</button>
-                        <button className={styles.btn}>Segundo Género</button>
+                    <div className={styles.customSelect}>
+                            <select required className={styles.btn} placeholder="Género">
+                                <option value="" disabled selected hidden>Instrumentos</option>
+                                <option value="">Pop</option>
+                                <option value="">Rock</option>
+                                <option value="">Electrónica</option>
+                            </select>
+                        </div>
+                        <div className={styles.customSelect}>
+                            <select required className={styles.btn} placeholder="Género">
+                                <option value="" disabled selected hidden>Tempo</option>
+                                <option value="">Pop</option>
+                                <option value="">Rock</option>
+                                <option value="">Electrónica</option>
+                            </select>
+                        </div>
+                        <div className={styles.customSelect}>
+                            <select required className={styles.btn} placeholder="Género">
+                                <option value="" disabled selected hidden>2° Género</option>
+                                <option value="">Pop</option>
+                                <option value="">Rock</option>
+                                <option value="">Electrónica</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.title}>
