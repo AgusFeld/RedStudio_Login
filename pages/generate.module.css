@@ -87,3 +87,17 @@
   .submit:hover{
     background-color: rgb(180, 10, 10);
   }
+
+  .imgContainer{
+    display: block;
+    height: 50vh;
+    width: 80vw;
+    background: white;
+  }
+
+  .img{
+    display: block;
+    margin-top: -19%;
+    margin-left: 5%;
+  }
+

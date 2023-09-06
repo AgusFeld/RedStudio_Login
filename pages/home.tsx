@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useRouter } from "next/router";
 import styles from "./home.module.css"
 
 const Home: React.FC = () => {
+
+    const [selectedImages, setSelectedImages] = useState([false, false, false, false, false]);
+
+    const toggleSelect = (index : any) => {
+        const updatedSelectedImages = [...selectedImages];
+        updatedSelectedImages[index] = !selectedImages[index];
+        setSelectedImages(updatedSelectedImages);
+    };
 
     return(
 
@@ -24,7 +32,16 @@ const Home: React.FC = () => {
                                 <h1 className={styles.b}>Rock</h1>
                                 <h1 className={styles.b}>Reggae</h1>
                             </div>
-                            <div className={styles.tick}></div>
+                            <div className={styles.tick}>
+                                {selectedImages.map((isSelected, index) => (
+                                    <img
+                                    key={index}
+                                    className={styles.select}
+                                    src={isSelected ? 'Select2.svg' : 'Select.svg'}
+                                    onClick={() => toggleSelect(index)}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
                     <div className={styles.buscador}></div>

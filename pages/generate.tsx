@@ -20,6 +20,7 @@ const Generate: React.FC = () => {
                                 <option value="">Rock</option>
                                 <option value="">Electrónica</option>
                             </select>
+                            <img className={styles.img} src="parlante.svg"></img>
                         </div>
                         <div className={styles.customSelect}>
                             <select required className={styles.btn} placeholder="Género">
@@ -28,6 +29,7 @@ const Generate: React.FC = () => {
                                 <option value="">Rock</option>
                                 <option value="">Electrónica</option>
                             </select>
+                            <img className={styles.img} src="clock.svg"></img>
                         </div>
                         <div className={styles.customSelect}>
                             <select required className={styles.btn} placeholder="Género">
@@ -36,6 +38,7 @@ const Generate: React.FC = () => {
                                 <option value="">Rock</option>
                                 <option value="">Electrónica</option>
                             </select>
+                            <img className={styles.img} src="escala.svg"></img>
                         </div>
                     </div>
                     <div className={styles.column}>
@@ -46,6 +49,7 @@ const Generate: React.FC = () => {
                                 <option value="">Rock</option>
                                 <option value="">Electrónica</option>
                             </select>
+                            <img className={styles.img} src="guitarra.svg"></img>
                         </div>
                         <div className={styles.customSelect}>
                             <select required className={styles.btn} placeholder="Género">
@@ -54,6 +58,7 @@ const Generate: React.FC = () => {
                                 <option value="">Rock</option>
                                 <option value="">Electrónica</option>
                             </select>
+                            <img className={styles.img} src="metronomo.svg"></img>
                         </div>
                         <div className={styles.customSelect}>
                             <select required className={styles.btn} placeholder="Género">
@@ -62,6 +67,7 @@ const Generate: React.FC = () => {
                                 <option value="">Rock</option>
                                 <option value="">Electrónica</option>
                             </select>
+                            <img className={styles.img} src="parlante.svg"></img>
                         </div>
                     </div>
                 </div>
@@ -70,6 +76,7 @@ const Generate: React.FC = () => {
                 </div>
             </div>
         </div>
+        
 
     );
 };

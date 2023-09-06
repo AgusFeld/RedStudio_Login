@@ -89,10 +89,9 @@
 
 .tick{
     display: flex;
-    width: 15%;
+    width: 10%;
     height: 100%;
     flex-direction: column;
-    background: blue;
 }
 
 .b{
@@ -101,4 +100,9 @@
     font-size: medium;
     font-family: sans-serif;
     margin-bottom: 5%;
+}
+
+.select{
+    display: flex;
+    margin-bottom: 30%;
 }
