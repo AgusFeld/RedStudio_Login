@@ -67,3 +67,13 @@
     display: flex;
     scale: 0.9;
 }
+
+.blank{
+    position: absolute;
+    background: white;
+    border-radius: 90px;
+    width: 3%;
+    height: 6.5%;
+    margin-top: 0.7vh;
+    margin-left: 6.5vw;
+}

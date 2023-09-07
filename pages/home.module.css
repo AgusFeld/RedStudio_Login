@@ -90,8 +90,11 @@
 .tick{
     display: flex;
     width: 10%;
+    min-width: 15px;
     height: 100%;
+    min-height: 15px;
     flex-direction: column;
+
 }
 
 .b{
