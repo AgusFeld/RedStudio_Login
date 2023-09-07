@@ -16,6 +16,10 @@ export async function authMiddleware(
 
   const authorizationToken = req.headers.authorization as string;
 
+  if(authorizationToken == undefined){
+    return res.status(405).json({ error: 'El token es inexistente' });
+  }
+
   const token = authorizationToken.split(' ')[1];
 
   console.log('Token:', token); 

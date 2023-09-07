@@ -13,7 +13,7 @@ const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
 
     try {
       return authMiddleware(req, res, async () => {
-        const userHistory = await prisma.music.findUnique({
+        const userHistory = await prisma.music.findMany({
           where: { email: req.email as string },
           select: { genre: true, file: true, name: true },
         });
