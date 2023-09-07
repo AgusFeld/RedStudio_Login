@@ -1,0 +1,69 @@
+.container{
+    display: flex;
+    background: #3C3636;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formContainer{
+    display: flex;
+    background: rgb(75, 74, 74);
+    height: 85vh;
+    width: 35%;
+    border: 1px solid;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerVinilo{
+    margin-top: 2%;
+    position: absolute;
+    width: 23%;
+    height: 50%;
+    
+    background: transparent;
+}
+
+.bar{
+    display: flex;
+    background: rgb(150, 150, 150);
+    width: 85%;
+    height: 2%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 80%;
+}
+
+.loop{
+    display: flex;
+    scale: 0.6;
+    margin-top: 5%;
+    margin-right: 45%;
+}
+
+.random{
+    display: flex;
+    scale: 0.6;
+    margin-top: -7%;
+    margin-left: 45%;
+}
+
+.interact{
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    height: 10%;
+}
+
+.img{
+    display: flex;
+    scale: 0.7;  
+}
+
+.play{
+    display: flex;
+    scale: 0.9;
+}

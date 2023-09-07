@@ -44,7 +44,11 @@ const Home: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.buscador}></div>
+                    <div className={styles.buscador}>
+                        <div className={styles.text}>
+                            <div className={styles.a}>Biblioteca</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
