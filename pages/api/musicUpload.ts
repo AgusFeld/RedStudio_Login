@@ -20,6 +20,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
               file
             },
           });
+          return res.status(200).json({message:'Musica enviada con exito a la base de datos'});
       });
     } catch (error) {
       return res.status(405).json({ error: 'Ocurrió un error al guardar la música del usuario' });
