@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: #3B3636;
+    flex-direction: column;
+}
+
+.top{
+    display: flex;
+    height: 20%;
+    width: 100%;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.600);
+}
+
+.blank{
+    display: flex;
+    width: 100%;
+    height: 7%;
+}
+
+.black{
+    display: flex;
+    height: 100%;
+    width: 20%;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.600);
+    border-right: solid 1px rgba(128, 128, 128, 0.600);
+}
+
+.grey{
+    display: flex;
+    height: 100%;
+    width: 80%;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.600);
+    background: rgba(128, 128, 128, 0.600);
+}
+
+.formContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 275%);
+}
+
+.create{
+    border-bottom: solid 1px rgba(128, 128, 128, 0.600);
+    border-right: solid 1px rgba(128, 128, 128, 0.600);
+    background: rgba(128, 128, 128, 0.600);
+}
+
+.gridItem{
+    border-bottom: solid 1px rgba(128, 128, 128, 0.600);
+    border-right: solid 1px rgba(128, 128, 128, 0.600);
+}
