@@ -37,7 +37,7 @@
 
 .formContainer{
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: 20% 80%;
     grid-template-rows: repeat(5, 275%);
 }
 
@@ -50,7 +50,7 @@
 
 .gridItem{
     display: grid;
-    grid-template-columns: repeat(10, 10%);
+    grid-template-columns: repeat(40, 1fr);
     grid-template-rows: repeat(1, 100%);
     border-bottom: solid 1px rgba(128, 128, 128, 0.600);
     border-right: solid 1px rgba(128, 128, 128, 0.600);
