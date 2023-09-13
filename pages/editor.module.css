@@ -45,9 +45,58 @@
     border-bottom: solid 1px rgba(128, 128, 128, 0.600);
     border-right: solid 1px rgba(128, 128, 128, 0.600);
     background: rgba(128, 128, 128, 0.600);
+    height: 12vh;
 }
 
 .gridItem{
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(1, 100%);
     border-bottom: solid 1px rgba(128, 128, 128, 0.600);
     border-right: solid 1px rgba(128, 128, 128, 0.600);
+    height: 12vh;
 }
+
+.btn{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.600);
+    border-right: 1px solid rgba(128, 128, 128, 0.600);
+}
+
+/* Add this to your CSS module */
+.grid {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 10vh;
+  }
+  
+  .soundList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    height: 10vh;
+  }
+  
+  .soundItem {
+    /* Define the styles for each sound item if needed */
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cell {
+    width: 100%; /* Adjust the width of your cells as needed */
+    height: 4vh; /* Adjust the height of your cells as needed */
+    border: 1px solid #000; /* Define the border styles for your cells */
+    cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+  }
+  
+  .selected {
+    background-color: red; /* Customize the background color for selected cells */
+    /* Add any additional styles to highlight selected cells */
+    color: #fff; /* Text color for selected cells, if needed */
+  }
+  
