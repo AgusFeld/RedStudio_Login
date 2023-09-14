@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./editor.module.css";
+import { Howl, Howler } from "howler";
 
 const Editor: React.FC = () => {
   const [selectedRows, setSelectedRows] = useState<Array<number | null>>(
@@ -7,7 +8,14 @@ const Editor: React.FC = () => {
   );
 
   // Define the available sounds for each row
-  const sounds = ["sound1.mp3", "sound2.mp3", "sound3.mp3", "sound4.mp3", "sound5.mp3", "sound6.mp3"];
+  const sounds = [
+    "sound1.mp3",
+    "sound2.mp3",
+    "sound3.mp3",
+    "sound4.mp3",
+    "sound5.mp3",
+    "sound6.mp3"
+  ];
 
   // Handle row selection
   const handleRowSelect = (colIndex: number, rowIndex: number) => {
@@ -16,15 +24,35 @@ const Editor: React.FC = () => {
     setSelectedRows(newSelectedRows);
   };
 
-  // Function to save the selected cells
-  const saveSelectedCells = () => {
-    // Filter out null values (unselected cells)
-    const selectedCells = selectedRows.filter((rowIndex) => rowIndex !== null);
+  // Function to convert cell values into sounds
+  const convertCellsToSounds = () => {
+    const selectedSounds = selectedRows.map((rowIndex) => {
+      if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds.length) {
+        return sounds[rowIndex];
+      }
+      return ""; // You can replace this with a default sound if needed
+    });
+    return selectedSounds;
+  };
 
-    // Now, you can send the selectedCells data to your backend
-    // For example, you can make an API call or include it in a form submission
-    // Replace the following line with your backend communication code
-    console.log("Selected Cells:", selectedCells);
+  // Function to play music track
+  const playMusicTrack = () => {
+    const selectedSounds = convertCellsToSounds();
+
+    // Create an array to store Howl objects for each selected sound
+    const soundObjects = selectedSounds.map((soundFile) => new Howl({ src: [soundFile] }));
+    
+    // Play the sounds sequentially
+    const playNextSound = (index: number) => {
+      if (index < soundObjects.length) {
+        soundObjects[index].play();
+        soundObjects[index].on("end", () => {
+          playNextSound(index + 1); // Play the next sound when the current sound ends
+        });
+      }
+    };
+    
+    playNextSound(0); // Start playing the first sound
   };
 
   return (
@@ -52,7 +80,7 @@ const Editor: React.FC = () => {
           ))}
         </div>
       </div>
-      <button onClick={saveSelectedCells}>Save Selected Cells</button>
+      <button onClick={playMusicTrack}>Play Music Track</button>
     </div>
   );
 };
