@@ -26,7 +26,7 @@ const Landing: React.FC = () => {
             <div className={styles.bar}>
                 <img className={styles.logo} src="Logo.png"></img>
                 <div className={styles.div2}>
-                    <a href="music">
+                    <a href="editor">
                         <button className={styles.text}>
                             Create Music
                         </button>
@@ -50,7 +50,7 @@ const Landing: React.FC = () => {
             <div className={styles.background}>
                 <img className={styles.img1} src="img1.png"></img>
                 <div className={styles.div4}>
-                    <a href="#">
+                    <a href="editor">
                         <button className={styles.btn}>
                             Create Music
                         </button>
@@ -62,9 +62,9 @@ const Landing: React.FC = () => {
                 <img className={styles.img5} src="img5.png" />
                 <img className={styles.img6} src="img6.png" />
                 <div className={styles.div5}>
-                    <a href="#">
+                    <a href="generate">
                         <button className={styles.btn}>
-                            Listen
+                            Generate
                         </button>
                     </a>
                 </div>
