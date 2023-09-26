@@ -3,11 +3,12 @@ import styles from "./editor.module.css";
 import { Howl, Howler } from "howler";
 
 const Editor: React.FC = () => {
+  // Estado para almacenar las filas seleccionadas en la cuadrícula
   const [selectedRows, setSelectedRows] = useState<Array<number | null>>(
-    Array.from({ length: 40 }, () => null) // Adjust the length to match the number of columns
+    Array.from({ length: 40 }, () => null) // Inicialmente todas las filas están deseleccionadas (null)
   );
 
-  // Define the available sounds for each row
+  // Definir los sonidos disponibles para cada fila
   const sounds = [
     "sound1.mp3",
     "sound2.mp3",
@@ -17,42 +18,49 @@ const Editor: React.FC = () => {
     "sound6.mp3"
   ];
 
-  // Handle row selection
+  // Manejar la selección de filas en la cuadrícula
   const handleRowSelect = (colIndex: number, rowIndex: number) => {
+    // Crear una copia del array selectedRows
     const newSelectedRows = [...selectedRows];
+    // Establecer la fila seleccionada en la posición colIndex
     newSelectedRows[colIndex] = rowIndex;
+    // Actualizar el estado selectedRows con la nueva selección
     setSelectedRows(newSelectedRows);
   };
 
-  // Function to convert cell values into sounds
+  // Función para convertir los valores de las celdas en nombres de sonido
   const convertCellsToSounds = () => {
+    // Mapear las filas seleccionadas a nombres de archivo de sonido
     const selectedSounds = selectedRows.map((rowIndex) => {
+      // Verificar si rowIndex es válido y dentro de los límites de sounds
       if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds.length) {
-        return sounds[rowIndex];
+        return sounds[rowIndex]; // Devolver el nombre del sonido correspondiente
       }
-      return ""; // You can replace this with a default sound if needed
+      return ""; // Devolver una cadena vacía si no hay una selección válida
     });
-    return selectedSounds;
+    return selectedSounds; // Devolver un array de nombres de sonido
   };
 
-  // Function to play music track
+  // Función para reproducir la pista de música
   const playMusicTrack = () => {
-    const selectedSounds = convertCellsToSounds();
+    const selectedSounds = convertCellsToSounds(); // Obtener los nombres de sonido seleccionados
 
-    // Create an array to store Howl objects for each selected sound
+    // Crear un array para almacenar objetos Howl para cada sonido seleccionado
     const soundObjects = selectedSounds.map((soundFile) => new Howl({ src: [soundFile] }));
     
-    // Play the sounds sequentially
+    // Función para reproducir los sonidos secuencialmente
     const playNextSound = (index: number) => {
+      // Verificar si index está dentro de los límites del array soundObjects
       if (index < soundObjects.length) {
-        soundObjects[index].play();
+        soundObjects[index].play(); // Reproducir el sonido en la posición index
+        // Configurar un evento "end" para reproducir el siguiente sonido cuando el actual termine
         soundObjects[index].on("end", () => {
-          playNextSound(index + 1); // Play the next sound when the current sound ends
+          playNextSound(index + 1);
         });
       }
     };
     
-    playNextSound(0); // Start playing the first sound
+    playNextSound(0); // Comenzar a reproducir el primer sonido en la secuencia
   };
 
   return (
