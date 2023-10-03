@@ -2,17 +2,23 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
 import { authMiddleware } from './authMiddleware';
 
+interface ExtendedNextApiRequest extends NextApiRequest {
+  email?: string;
+}
+
 const prisma = new PrismaClient();
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
 
     try {
       return authMiddleware(req, res, async () => {
 
-        const { name, email, genre, file } = req.body;
+        const { name, genre, file } = req.body;
+        const email = req.email as string;
 
         const nUpload = await prisma.music.create({
+          
             data: {
               name,
               email,
