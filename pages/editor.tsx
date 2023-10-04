@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./editor.module.css";
 import { Howl, Howler } from "howler";
 
+
 const Editor: React.FC = () => {
   // Estado para almacenar las filas seleccionadas en la cuadrícula
   const [selectedRows, setSelectedRows] = useState<Array<number | null>>(

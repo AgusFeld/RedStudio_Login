@@ -38,7 +38,7 @@
 .formContainer{
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: repeat(5, 275%);
+    grid-template-rows: repeat(5, 20%);
 }
 
 .create{
@@ -93,10 +93,14 @@
     border: 1px solid #000; /* Define the border styles for your cells */
     cursor: pointer; /* Add a pointer cursor to indicate interactivity */
   }
+
+  .gridItem .column:nth-child(10n) .cell {
+    border-right: 1px solid grey; /* Change the right border to grey */
+  }
   
   .selected {
     background-color: red; /* Customize the background color for selected cells */
-    /* Add any additional styles to highlight selected cells */
+    border: solid 1px red;
     color: #fff; /* Text color for selected cells, if needed */
   }
   
