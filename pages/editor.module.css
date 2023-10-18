@@ -11,6 +11,7 @@
     height: 20%;
     width: 100%;
     border-bottom: solid 1px rgba(128, 128, 128, 0.600);
+    
 }
 
 .blank{
@@ -42,10 +43,66 @@
 }
 
 .create{
+    display: flex;
     border-bottom: solid 1px rgba(128, 128, 128, 0.600);
     border-right: solid 1px rgba(128, 128, 128, 0.600);
     background: rgba(128, 128, 128, 0.600);
     height: 12vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.options{
+  display: flex;
+  width: 50%;
+  height: 70%;
+  flex-direction: column;
+}
+
+.select{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color: rgb(128, 128, 128);
+  justify-content: space-around;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.mute {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color: rgb(128, 128, 128);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom: 1px solid black;
+}
+
+.selectbtn {
+  display: flex;
+  width: 33.3%;
+  height: 100%;
+  border-right: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add the redBackground class for the toggle effect */
+.redBackground {
+  background-color: red;
+}
+
+.selectbtn:nth-child(1){
+  border-bottom-left-radius: 5px;
+}
+
+.selectbtn:nth-child(3){
+  border-right: 0;
+  border-bottom-right-radius: 5px;
 }
 
 .gridItem{
@@ -78,29 +135,47 @@
     height: 10vh;
   }
   
-  .soundItem {
-    /* Define the styles for each sound item if needed */
-  }
-  
   .column {
     display: flex;
     flex-direction: column;
   }
   
   .cell {
-    width: 100%; /* Adjust the width of your cells as needed */
-    height: 4vh; /* Adjust the height of your cells as needed */
+    width: 90%; /* Adjust the width of your cells as needed */
+    height: 1.8vh; /* Adjust the height of your cells as needed */
     border: 1px solid #000; /* Define the border styles for your cells */
+    border-radius: 30%;
+    margin-bottom: 0.3vh;
     cursor: pointer; /* Add a pointer cursor to indicate interactivity */
-  }
-
-  .gridItem .column:nth-child(10n) .cell {
-    border-right: 1px solid grey; /* Change the right border to grey */
   }
   
   .selected {
     background-color: red; /* Customize the background color for selected cells */
     border: solid 1px red;
+    color: #fff; /* Text color for selected cells, if needed */
+  }
+
+  .selected2 {
+    background-color: blue; /* Customize the background color for selected cells */
+    border: solid 1px blue;
+    color: #fff; /* Text color for selected cells, if needed */
+  }
+
+  .selected3 {
+    background-color: green; /* Customize the background color for selected cells */
+    border: solid 1px green;
+    color: #fff; /* Text color for selected cells, if needed */
+  }
+
+  .selected4 {
+    background-color: aqua; /* Customize the background color for selected cells */
+    border: solid 1px aqua;
+    color: #fff; /* Text color for selected cells, if needed */
+  }
+
+  .selected5 {
+    background-color: gold; /* Customize the background color for selected cells */
+    border: solid 1px gold;
     color: #fff; /* Text color for selected cells, if needed */
   }
   

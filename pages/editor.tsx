@@ -81,15 +81,61 @@ const Editor: React.FC = () => {
     playNextSound(soundObjects5, 0);
   };
 
+  const [isMuteToggled, setIsMuteToggled] = useState(false);
+  const [isSelect1Toggled, setIsSelect1Toggled] = useState(false);
+  const [isSelect2Toggled, setIsSelect2Toggled] = useState(false);
+  const [isSelect3Toggled, setIsSelect3Toggled] = useState(false);
+
+  const handleMuteToggle = () => {
+    setIsMuteToggled(!isMuteToggled);
+  };
+
+  const handleSelect1Toggle = () => {
+    setIsSelect1Toggled(!isSelect1Toggled);
+  };
+
+  const handleSelect2Toggle = () => {
+    setIsSelect2Toggled(!isSelect2Toggled);
+  };
+
+  const handleSelect3Toggle = () => {
+    setIsSelect3Toggled(!isSelect3Toggled);
+  };
+
+  const muteClass = isMuteToggled ? `${styles.mute} ${styles.redBackground}` : styles.mute;
+  const selectbtn1Class = isSelect1Toggled ? `${styles.selectbtn} ${styles.redBackground}` : styles.selectbtn;
+  const selectbtn2Class = isSelect2Toggled ? `${styles.selectbtn} ${styles.redBackground}` : styles.selectbtn;
+  const selectbtn3Class = isSelect3Toggled ? `${styles.selectbtn} ${styles.redBackground}` : styles.selectbtn;
+
   return (
     <div className={styles.container}>
-      <div className={styles.top}></div>
+      <div className={styles.top}>
+        
+      </div>
       <div className={styles.blank}>
         <div className={styles.black}></div>
         <div className={styles.grey}></div>
       </div>
       <div className={styles.formContainer}>
-        <div className={styles.create}>1</div>
+        <div className={styles.create}>
+          <img src="tambor.png" alt="" />
+          <div className={styles.options}>
+            <button className={muteClass} onClick={handleMuteToggle}>
+              M
+            </button>
+            <div className={styles.select}>
+              <button className={selectbtn1Class} onClick={handleSelect1Toggle}>
+                <img src="trash.png" alt="" />
+              </button>
+              <button className={selectbtn2Class} onClick={handleSelect2Toggle}>
+                <img src="copy.png" alt="" />
+              </button>
+              <button className={selectbtn3Class} onClick={handleSelect3Toggle}>
+                <img src="auriculares.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className={styles.gridItem}>
           {Array.from({ length: 40 }, (_, colIndex) => (
             <div key={colIndex} className={styles.column}>
@@ -110,7 +156,7 @@ const Editor: React.FC = () => {
               {Array.from({ length: 6 }, (_, rowIndex) => (
                 <div
                   key={rowIndex}
-                  className={`${styles.cell} ${selectedRows2[colIndex] === rowIndex ? styles.selected : ""}`}
+                  className={`${styles.cell} ${selectedRows2[colIndex] === rowIndex ? styles.selected2 : ""}`}
                   onClick={() => handleRowSelect(setSelectedRows2, colIndex, rowIndex)}
                 ></div>
               ))}
@@ -124,7 +170,7 @@ const Editor: React.FC = () => {
               {Array.from({ length: 6 }, (_, rowIndex) => (
                 <div
                   key={rowIndex}
-                  className={`${styles.cell} ${selectedRows3[colIndex] === rowIndex ? styles.selected : ""}`}
+                  className={`${styles.cell} ${selectedRows3[colIndex] === rowIndex ? styles.selected3 : ""}`}
                   onClick={() => handleRowSelect(setSelectedRows3, colIndex, rowIndex)}
                 ></div>
               ))}
@@ -138,7 +184,7 @@ const Editor: React.FC = () => {
               {Array.from({ length: 6 }, (_, rowIndex) => (
                 <div
                   key={rowIndex}
-                  className={`${styles.cell} ${selectedRows4[colIndex] === rowIndex ? styles.selected : ""}`}
+                  className={`${styles.cell} ${selectedRows4[colIndex] === rowIndex ? styles.selected4 : ""}`}
                   onClick={() => handleRowSelect(setSelectedRows4, colIndex, rowIndex)}
                 ></div>
               ))}
@@ -152,7 +198,7 @@ const Editor: React.FC = () => {
               {Array.from({ length: 6 }, (_, rowIndex) => (
                 <div
                   key={rowIndex}
-                  className={`${styles.cell} ${selectedRows5[colIndex] === rowIndex ? styles.selected : ""}`}
+                  className={`${styles.cell} ${selectedRows5[colIndex] === rowIndex ? styles.selected5 : ""}`}
                   onClick={() => handleRowSelect(setSelectedRows5, colIndex, rowIndex)}
                 ></div>
               ))}
