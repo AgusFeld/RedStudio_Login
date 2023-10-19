@@ -88,23 +88,27 @@ const Editor: React.FC = () => {
 
   const handleMuteToggle = () => {
     setIsMuteToggled(!isMuteToggled);
+    setIsSelect3Toggled(false); // Deselect Auriculares
   };
 
   const handleSelect1Toggle = () => {
     setIsSelect1Toggled(!isSelect1Toggled);
+    setIsMuteToggled(false); // Deselect Mute
+    setIsSelect3Toggled(false); // Deselect Auriculares
+    setSelectedRows1(Array.from({ length: 40 }, () => null));
   };
 
   const handleSelect2Toggle = () => {
     setIsSelect2Toggled(!isSelect2Toggled);
+    setSelectedRows2([...selectedRows1]);
   };
 
   const handleSelect3Toggle = () => {
     setIsSelect3Toggled(!isSelect3Toggled);
+    setIsMuteToggled(false); // Deselect Mute
   };
 
   const muteClass = isMuteToggled ? `${styles.mute} ${styles.redBackground}` : styles.mute;
-  const selectbtn1Class = isSelect1Toggled ? `${styles.selectbtn} ${styles.redBackground}` : styles.selectbtn;
-  const selectbtn2Class = isSelect2Toggled ? `${styles.selectbtn} ${styles.redBackground}` : styles.selectbtn;
   const selectbtn3Class = isSelect3Toggled ? `${styles.selectbtn} ${styles.redBackground}` : styles.selectbtn;
 
   return (
@@ -124,10 +128,10 @@ const Editor: React.FC = () => {
               M
             </button>
             <div className={styles.select}>
-              <button className={selectbtn1Class} onClick={handleSelect1Toggle}>
+              <button className={styles.trash} onClick={handleSelect1Toggle}>
                 <img src="trash.png" alt="" />
               </button>
-              <button className={selectbtn2Class} onClick={handleSelect2Toggle}>
+              <button className={styles.trash} onClick={handleSelect2Toggle}>
                 <img src="copy.png" alt="" />
               </button>
               <button className={selectbtn3Class} onClick={handleSelect3Toggle}>

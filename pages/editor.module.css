@@ -11,7 +11,8 @@
     height: 20%;
     width: 100%;
     border-bottom: solid 1px rgba(128, 128, 128, 0.600);
-    
+    align-items: center;
+    justify-content: center;
 }
 
 .blank{
@@ -91,13 +92,27 @@
   justify-content: center;
 }
 
-/* Add the redBackground class for the toggle effect */
-.redBackground {
-  background-color: red;
+.trash{
+  display: flex;
+  width: 33.3%;
+  height: 100%;
+  border-right: 1px solid black;
+  border-bottom-left-radius: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
-.selectbtn:nth-child(1){
-  border-bottom-left-radius: 5px;
+.trash:active{
+  background: #B60707;
+}
+
+.trash:nth-child(2){
+  border-bottom-left-radius: 0;
+}
+
+/* Add the redBackground class for the toggle effect */
+.redBackground {
+  background-color: #B60707;
 }
 
 .selectbtn:nth-child(3){
