@@ -90,8 +90,6 @@ const Editor: React.FC = () => {
   };
 
   const [isMuteToggled, setIsMuteToggled] = useState(false);
-  const [isSelect1Toggled, setIsSelect1Toggled] = useState(false);
-  const [isSelect2Toggled, setIsSelect2Toggled] = useState(false);
   const [isSelect3Toggled, setIsSelect3Toggled] = useState(false);
 
   const handleMuteToggle = () => {
@@ -189,7 +187,29 @@ const Editor: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={styles.create}>3</div>
+        <div className={styles.create}>
+          <img src="tambor.png" alt="" />
+          <div className={styles.options}>
+            <button className={muteClass} onClick={handleMuteToggle}>
+              M
+            </button>
+            <div className={styles.select}>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows3(Array.from({ length: 40 }, () => null));
+              }}>
+                <img src="trash.png" alt="" />
+              </button>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows4([...selectedRows3]); // Update the state immediately
+              }}>
+                <img src="copy.png" alt="" />
+              </button>
+              <button className={selectbtn3Class} onClick={handleSelect3Toggle}>
+                <img src="auriculares.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className={styles.gridItem}>
           {Array.from({ length: 40 }, (_, colIndex) => (
             <div key={colIndex} className={styles.column}>
@@ -203,7 +223,29 @@ const Editor: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={styles.create}>4</div>
+        <div className={styles.create}>
+          <img src="tambor.png" alt="" />
+          <div className={styles.options}>
+            <button className={muteClass} onClick={handleMuteToggle}>
+              M
+            </button>
+            <div className={styles.select}>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows4(Array.from({ length: 40 }, () => null));
+              }}>
+                <img src="trash.png" alt="" />
+              </button>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows5([...selectedRows4]); // Update the state immediately
+              }}>
+                <img src="copy.png" alt="" />
+              </button>
+              <button className={selectbtn3Class} onClick={handleSelect3Toggle}>
+                <img src="auriculares.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className={styles.gridItem}>
           {Array.from({ length: 40 }, (_, colIndex) => (
             <div key={colIndex} className={styles.column}>
@@ -217,7 +259,29 @@ const Editor: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={styles.create}>5</div>
+        <div className={styles.create}>
+          <img src="tambor.png" alt="" />
+          <div className={styles.options}>
+            <button className={muteClass} onClick={handleMuteToggle}>
+              M
+            </button>
+            <div className={styles.select}>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows5(Array.from({ length: 40 }, () => null));
+              }}>
+                <img src="trash.png" alt="" />
+              </button>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows4([...selectedRows5]); // Update the state immediately
+              }}>
+                <img src="copy.png" alt="" />
+              </button>
+              <button className={selectbtn3Class} onClick={handleSelect3Toggle}>
+                <img src="auriculares.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className={styles.gridItem}>
           {Array.from({ length: 40 }, (_, colIndex) => (
             <div key={colIndex} className={styles.column}>
