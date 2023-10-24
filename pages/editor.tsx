@@ -20,6 +20,14 @@ const Editor: React.FC = () => {
     Array.from({ length: 40 }, () => null)
   );
 
+  const selectedRowsArray = [
+    selectedRows1,
+    selectedRows2,
+    selectedRows3,
+    selectedRows4,
+    selectedRows5,
+  ];
+
   // Definir los sonidos disponibles para cada fila
   const sounds = [
     "sound1.mp3",
@@ -91,18 +99,6 @@ const Editor: React.FC = () => {
     setIsSelect3Toggled(false); // Deselect Auriculares
   };
 
-  const handleSelect1Toggle = () => {
-    setIsSelect1Toggled(!isSelect1Toggled);
-    setIsMuteToggled(false); // Deselect Mute
-    setIsSelect3Toggled(false); // Deselect Auriculares
-    setSelectedRows1(Array.from({ length: 40 }, () => null));
-  };
-
-  const handleSelect2Toggle = () => {
-    setIsSelect2Toggled(!isSelect2Toggled);
-    setSelectedRows2([...selectedRows1]);
-  };
-
   const handleSelect3Toggle = () => {
     setIsSelect3Toggled(!isSelect3Toggled);
     setIsMuteToggled(false); // Deselect Mute
@@ -128,10 +124,14 @@ const Editor: React.FC = () => {
               M
             </button>
             <div className={styles.select}>
-              <button className={styles.trash} onClick={handleSelect1Toggle}>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows1(Array.from({ length: 40 }, () => null));
+              }}>
                 <img src="trash.png" alt="" />
               </button>
-              <button className={styles.trash} onClick={handleSelect2Toggle}>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows2([...selectedRows1]); // Update the state immediately
+              }}>
                 <img src="copy.png" alt="" />
               </button>
               <button className={selectbtn3Class} onClick={handleSelect3Toggle}>
@@ -153,7 +153,29 @@ const Editor: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={styles.create}>2</div>
+        <div className={styles.create}>
+          <img src="tambor.png" alt="" />
+          <div className={styles.options}>
+            <button className={muteClass} onClick={handleMuteToggle}>
+              M
+            </button>
+            <div className={styles.select}>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows2(Array.from({ length: 40 }, () => null));
+              }}>
+                <img src="trash.png" alt="" />
+              </button>
+              <button className={styles.trash} onClick={() => {
+                setSelectedRows3([...selectedRows2]); // Update the state immediately
+              }}>
+                <img src="copy.png" alt="" />
+              </button>
+              <button className={selectbtn3Class} onClick={handleSelect3Toggle}>
+                <img src="auriculares.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className={styles.gridItem}>
           {Array.from({ length: 40 }, (_, colIndex) => (
             <div key={colIndex} className={styles.column}>
