@@ -108,7 +108,15 @@ const Editor: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        
+        <button>
+          <img src="backbtn.png" alt="" />
+        </button>
+        <button onClick={playMusicTrack} className={styles.play}>
+          <img src="playbtn.png" alt="" />
+        </button>
+        <button>
+          <img src="forwardbtn.png" alt="" />
+        </button>
       </div>
       <div className={styles.blank}>
         <div className={styles.black}></div>
@@ -296,7 +304,6 @@ const Editor: React.FC = () => {
           ))}
         </div>
       </div>
-      <button onClick={playMusicTrack}>Play Music Track</button>
     </div>
   );
 };

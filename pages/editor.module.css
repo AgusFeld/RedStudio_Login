@@ -193,4 +193,15 @@
     border: solid 1px gold;
     color: #fff; /* Text color for selected cells, if needed */
   }
-  
+
+.play{
+  display: flex;
+  height: 45%;
+  width: 12%;
+  background: #585555;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.1vh solid #3B3636;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
