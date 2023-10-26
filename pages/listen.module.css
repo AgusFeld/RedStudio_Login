@@ -10,70 +10,34 @@
 .formContainer{
     display: flex;
     background: rgb(75, 74, 74);
-    height: 85vh;
-    width: 35%;
+    height: 70vh;
+    width: 70%;
     border: 1px solid;
-    border-radius: 5px;
-    align-items: center;
+    border-radius: 100px;
+}
+
+.disco{
+    display: flex;
+    height: 100%;
+    width: 55%;
+    border-right: 1px solid black;
+
+}
+
+.cola{
+    display: flex;
+    height: 100%;
+    width: 45%;
     flex-direction: column;
 }
 
-.containerVinilo{
-    margin-top: 2%;
-    position: absolute;
-    width: 23%;
-    height: 50%;
-    
-    background: transparent;
-}
-
-.bar{
+.colatxt{
     display: flex;
-    background: rgb(150, 150, 150);
-    width: 85%;
-    height: 2%;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: 80%;
-}
-
-.loop{
-    display: flex;
-    scale: 0.6;
-    margin-top: 5%;
-    margin-right: 45%;
-}
-
-.random{
-    display: flex;
-    scale: 0.6;
-    margin-top: -7%;
-    margin-left: 45%;
-}
-
-.interact{
-    display: flex;
-    justify-content: space-between;
-    width: 45%;
-    height: 10%;
-}
-
-.img{
-    display: flex;
-    scale: 0.7;  
-}
-
-.play{
-    display: flex;
-    scale: 0.9;
-}
-
-.blank{
-    position: absolute;
-    background: white;
-    border-radius: 90px;
-    width: 3%;
-    height: 6.5%;
-    margin-top: 0.7vh;
-    margin-left: 6.5vw;
+    width: 98.5%;
+    height: 15%;
+    border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5dvh;
 }

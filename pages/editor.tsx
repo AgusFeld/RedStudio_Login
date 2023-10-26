@@ -160,7 +160,7 @@ const Editor: React.FC = () => {
           ))}
         </div>
         <div className={styles.create}>
-          <img src="tambor.png" alt="" />
+          <img src="guitarra.png" alt="" />
           <div className={styles.options}>
             <button className={muteClass} onClick={handleMuteToggle}>
               M
@@ -196,7 +196,7 @@ const Editor: React.FC = () => {
           ))}
         </div>
         <div className={styles.create}>
-          <img src="tambor.png" alt="" />
+          <img src="teclado.png" alt="" />
           <div className={styles.options}>
             <button className={muteClass} onClick={handleMuteToggle}>
               M
@@ -232,7 +232,7 @@ const Editor: React.FC = () => {
           ))}
         </div>
         <div className={styles.create}>
-          <img src="tambor.png" alt="" />
+          <img src="platillos.png" alt="" />
           <div className={styles.options}>
             <button className={muteClass} onClick={handleMuteToggle}>
               M
@@ -268,7 +268,7 @@ const Editor: React.FC = () => {
           ))}
         </div>
         <div className={styles.create}>
-          <img src="tambor.png" alt="" />
+          <img src="guitarra.png" alt="" />
           <div className={styles.options}>
             <button className={muteClass} onClick={handleMuteToggle}>
               M
