@@ -21,7 +21,8 @@
     height: 100%;
     width: 55%;
     border-right: 1px solid black;
-
+    align-items: center;
+    flex-direction: column;
 }
 
 .cola{
@@ -40,4 +41,34 @@
     justify-content: center;
     color: white;
     font-size: 5dvh;
+}
+
+.titulo{
+    color: white;
+    text-decoration: underline;
+    font-size: 3dvh;
+    margin-top: 5%;
+}
+
+.discoContainer{
+    display: flex;
+    margin-top: -5%;
+    scale: 0.6;
+    animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.brazo{
+    display: flex;
+    scale: 0.6;
+    margin-left: 50%;
+    margin-top: -90%;
 }
