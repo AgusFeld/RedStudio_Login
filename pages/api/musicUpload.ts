@@ -10,7 +10,7 @@ const api_secret = process.env.api_secret as string
 cloudinary.config({ 
   cloud_name, 
   api_key, 
-  api_secret 
+  api_secret
 });
 
 interface ExtendedNextApiRequest extends NextApiRequest {
@@ -28,6 +28,7 @@ const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
 
         const cloudinaryResponse = await cloudinary.uploader.upload(file, {
           folder: 'songs',
+          resource_type : 'video'
         });
 
         const fileUrl = cloudinaryResponse.secure_url;
