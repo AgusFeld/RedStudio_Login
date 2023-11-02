@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styles from "./editor.module.css";
 import { Howl, Howler } from "howler";
+import { FFmpeg } from '@ffmpeg/ffmpeg';
+
+
+
 
 const Editor: React.FC = () => {
   // Estado para almacenar las filas seleccionadas en la cuadrícula
@@ -104,6 +108,45 @@ const Editor: React.FC = () => {
 
   const muteClass = isMuteToggled ? `${styles.mute} ${styles.redBackground}` : styles.mute;
   const selectbtn3Class = isSelect3Toggled ? `${styles.selectbtn} ${styles.redBackground}` : styles.selectbtn;
+
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [songName, setSongName] = useState("");
+  const [songGenre, setSongGenre] = useState("");
+
+  const openForm = () => {
+    setIsFormVisible(true);
+  };
+
+  const closeForm = () => {
+    setIsFormVisible(false);
+  };
+
+  const handleSongNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSongName(event.target.value);
+  };
+  
+  const handleSongGenreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSongGenre(event.target.value);
+  };
+
+  const handleSaveAndConvert = async () => {
+    // Guarda la información (nombre y género de la canción) en algún lugar, por ejemplo, en un estado global o en una base de datos.
+  
+    // Convierte el audio a un solo archivo MP3 usando la biblioteca audioconcat
+    const selectedSounds1 = convertCellsToSounds(selectedRows1);
+    const selectedSounds2 = convertCellsToSounds(selectedRows2);
+    const selectedSounds3 = convertCellsToSounds(selectedRows3);
+    const selectedSounds4 = convertCellsToSounds(selectedRows4);
+    const selectedSounds5 = convertCellsToSounds(selectedRows5);
+  
+    const allSelectedSounds = [...selectedSounds1, ...selectedSounds2, ...selectedSounds3, ...selectedSounds4, ...selectedSounds5];
+  
+    // Lógica para convertir los sonidos en un solo archivo MP3
+    // Puedes utilizar la biblioteca audioconcat o cualquier otra de tu elección
+  
+    // Cierra el formulario después de guardar
+    closeForm();
+  };
 
   return (
     <div className={styles.container}>
@@ -304,7 +347,33 @@ const Editor: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+      <div className={styles.save}>
+        <button className={styles.submitbtn} onClick={openForm}>Save</button>
+      </div>
+      {isFormVisible && (
+        <div className={styles.convert}>
+          <div className={styles.form}>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Song Name"
+              value={songName}
+              onChange={handleSongNameChange}
+            />
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Song Genre"
+              value={songGenre}
+              onChange={handleSongGenreChange}
+            />
+            <button className={styles.submitbtn} onClick={handleSaveAndConvert}>
+              Save and Convert
+            </button>
+          </div>
+        </div>
+      )}
+    </div>      
   );
 };
 
