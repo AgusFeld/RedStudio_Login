@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import styles from "./editor.module.css";
 import { Howl, Howler } from "howler";
-import { FFmpeg } from '@ffmpeg/ffmpeg';
-
-
-
 
 const Editor: React.FC = () => {
   // Estado para almacenar las filas seleccionadas en la cuadrícula
@@ -125,26 +121,23 @@ const Editor: React.FC = () => {
     setSongName(event.target.value);
   };
   
-  const handleSongGenreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSongGenre(event.target.value);
-  };
+  const handleSongGenreChange = (event: React.ChangeEvent) => {
+    setSongGenre((event.target as HTMLSelectElement).value);
+  }; 
 
   const handleSaveAndConvert = async () => {
-    // Guarda la información (nombre y género de la canción) en algún lugar, por ejemplo, en un estado global o en una base de datos.
-  
-    // Convierte el audio a un solo archivo MP3 usando la biblioteca audioconcat
-    const selectedSounds1 = convertCellsToSounds(selectedRows1);
-    const selectedSounds2 = convertCellsToSounds(selectedRows2);
-    const selectedSounds3 = convertCellsToSounds(selectedRows3);
-    const selectedSounds4 = convertCellsToSounds(selectedRows4);
-    const selectedSounds5 = convertCellsToSounds(selectedRows5);
-  
-    const allSelectedSounds = [...selectedSounds1, ...selectedSounds2, ...selectedSounds3, ...selectedSounds4, ...selectedSounds5];
-  
-    // Lógica para convertir los sonidos en un solo archivo MP3
-    // Puedes utilizar la biblioteca audioconcat o cualquier otra de tu elección
-  
-    // Cierra el formulario después de guardar
+    try {
+      const response = await fetch('/api/musicUpload', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ selectedRows1, selectedRows2, selectedRows3, selectedRows4, selectedRows5 }),
+      });
+    } catch (error) {
+      console.error('Error al guardar:', error);
+      alert('Ocurrió un error al guardar');
+    }
     closeForm();
   };
 
@@ -356,18 +349,24 @@ const Editor: React.FC = () => {
             <input
               className={styles.input}
               type="text"
-              placeholder="Song Name"
+              placeholder="Nombre de la cancion"
               value={songName}
               onChange={handleSongNameChange}
             />
-            <input
+            <select
               className={styles.input}
-              type="text"
-              placeholder="Song Genre"
               value={songGenre}
               onChange={handleSongGenreChange}
-            />
-            <button className={styles.submitbtn} onClick={handleSaveAndConvert}>
+            >
+              <option value="" disabled>
+                Selecciona un género
+              </option>
+              <option value="rock">Rock</option>
+              <option value="pop">Pop</option>
+              <option value="electronica">Electronica</option>
+              {/* Agrega más opciones según tus necesidades */}
+            </select>
+            <button className={styles.convertbtn} onClick={handleSaveAndConvert}>
               Save and Convert
             </button>
           </div>
