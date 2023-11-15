@@ -46,7 +46,31 @@ const Home: React.FC = () => {
                     </div>
                     <div className={styles.buscador}>
                         <div className={styles.text}>
-                            <div className={styles.a}>Biblioteca</div>
+                            <div className={styles.aa}>Biblioteca</div>
+                        </div>
+                        <div className={styles.scroll}>
+                            <div className={styles.overflowContainer}>
+                                {/* Contenido que quieres que sea desplazable */}
+                                <div className={styles.scrollableContent}>          
+                                    <div className={styles.song}>
+                                        <button className={styles.subtract}>
+                                            <img src="Subtract.png" alt="" />
+                                        </button>
+                                    </div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                    <div className={styles.song}></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

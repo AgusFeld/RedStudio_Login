@@ -9,7 +9,7 @@
 .formContainer{
     display: flex;
     flex-direction: column;
-    background: #141414;
+    background: #202020;
     width: 100%;
     height: 100%;
 }
@@ -19,7 +19,7 @@
     width: 100%;
     height: 12vh;
     
-    border-bottom: solid 1px #00000070;
+    border-bottom: solid 1px #000000;
 }
 
 .abajo{
@@ -34,7 +34,7 @@
     display: flex;
     width: 15%;
     height: 85%;
-    background: #292929;
+    background: #2A2929;
     border: solid 5px #443e3e;
     flex-direction: column;
     justify-content: space-between;
@@ -43,10 +43,66 @@
 
 .buscador{
     display: flex;
+    position: relative;
+    overflow: hidden;
     width: 75%;
     height: 85%;
-    background: #292929;
+    background: #2A2929;
     border: solid 5px #443e3e;
+    flex-direction: column;
+}
+
+.scroll{
+    display: flex;
+    width: 100%;
+    height: 88%;
+    align-items: center;
+    justify-content: center;
+}
+
+.overflowContainer {
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: visible;
+    width: 95%;
+    height: 90%;
+    margin-right: -1px; /* Alinear el borde derecho con el de .song */
+}
+
+.scrollableContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.song {
+    display: flex;
+    width: 90%; /* Ajustar el ancho para eliminar el espacio extra */
+    height: 8vh;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
+    align-items: center;
+    background: radial-gradient(#78787818, #2A2929, #2A2929);
+}
+
+.song:nth-child(1){
+    border: solid 1px black;
+}
+
+.title{
+    display: flex;
+    width: 100%;
+    height: 8vh;
+}
+
+.space{
+    display: flex;
+    position: absolute;
+    width: 10%;
+    background: #292929;
+    border: #292929 10px solid;
+    margin-right: -5%;
 }
 
 .logo{
@@ -71,6 +127,14 @@
     font-size: large;
     color: white;
     margin-left: 5%;
+}
+
+.aa{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    color: white;
+    margin-left: 2%;
 }
 
 .seleccionar{
@@ -108,4 +172,45 @@
 .select{
     display: flex;
     margin-bottom: 30%;
+}
+
+.overflowContainer::-webkit-scrollbar-track {
+    background: #000; /* Color del riel (fondo de la barra) */
+    border-radius: 10px; /* Bordes curvados del riel */
+    margin: 10px 0; /* Margen superior e inferior de 10px, sin margen a los lados */
+}
+
+/* Estilos para el pulgar (thumb) de la barra de desplazamiento */
+.overflowContainer::-webkit-scrollbar-thumb {
+    background: #6e6e6e; /* Color del pulgar */
+    border-radius: 10px; /* Borde redondeado del pulgar */
+    width: 6px !important; /* Ancho del pulgar */
+    height: auto !important; /* Altura del pulgar */
+}
+
+/* Estilos para la barra de desplazamiento */
+.overflowContainer::-webkit-scrollbar {
+    width: 10px; /* Ancho del scrollbar */
+    margin-left: 10px; /* Margen a la izquierda del scrollbar */
+}
+
+/* Cambiar el color del pulgar cuando está siendo activado (clic o arrastre) */
+.overflowContainer::-webkit-scrollbar-thumb:hover {
+    background: #3d3d3d; /* Cambio de color al pasar el mouse sobre el pulgar */
+}
+
+/* Ajustar el tamaño vertical del thumb */
+.overflowContainer::-webkit-scrollbar-thumb:vertical {
+    height: 20%; /* Altura del pulgar, 85% del tamaño vertical */
+}
+
+.overflowContainer::-webkit-scrollbar-thumb:horizontal {
+    width: 2px; /* Altura del pulgar, 85% del tamaño vertical */
+}
+
+.subtract{
+    display: flex;
+    width: 2.75vw;
+    height: 5vh;
+    margin-left: 2%;
 }
