@@ -29,17 +29,33 @@ const Editor: React.FC = () => {
   ];
 
   // Definir los sonidos disponibles para cada fila
-  const sounds = [
-    "sound1.mp3",
-    "sound2.mp3",
-    "sound3.mp3",
-    "sound4.mp3",
-    "sound5.mp3",
-    "sound6.mp3",
-  ];
+  const sounds1 = [
+  "sound1.mp3",
+  "sound2.mp3",
+  "sound3.mp3",
+  "sound4.mp3",
+  "sound5.mp3",
+  "sound6.mp3",
+];
 
-  const handleRowSelect = (setSelectedRows: React.Dispatch<React.SetStateAction<(number | null)[]>>, colIndex: number, rowIndex: number) => {
-    setSelectedRows((prevSelectedRows) => {
+const sounds2 = [
+  "guitar1.wav",
+  "guitar2.wav",
+  "guitar3.wav",
+  "guitar4.wav",
+  "guitar5.wav",
+  "guitar6.wav",
+];
+
+  const handleRowSelect1 = (setSelectedRows1: React.Dispatch<React.SetStateAction<(number | null)[]>>, colIndex: number, rowIndex: number) => {
+    setSelectedRows1((prevSelectedRows) => {
+      prevSelectedRows[colIndex] = rowIndex;
+      return [...prevSelectedRows];
+    });
+  };
+
+  const handleRowSelect2 = (setSelectedRows2: React.Dispatch<React.SetStateAction<(number | null)[]>>, colIndex: number, rowIndex: number) => {
+    setSelectedRows2((prevSelectedRows) => {
       prevSelectedRows[colIndex] = rowIndex;
       return [...prevSelectedRows];
     });
@@ -47,10 +63,20 @@ const Editor: React.FC = () => {
   
 
   // Función para convertir los valores de las celdas en nombres de sonido
-  const convertCellsToSounds = (selectedRows: Array<number | null>) => {
+  const convertCellsToSounds1 = (selectedRows: Array<number | null>) => {
     const selectedSounds = selectedRows.map((rowIndex) => {
-      if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds.length) {
-        return sounds[rowIndex];
+      if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds1.length) {
+        return sounds1[rowIndex];
+      }
+      return "";
+    });
+    return selectedSounds;
+  };
+
+  const convertCellsToSounds2 = (selectedRows: Array<number | null>) => {
+    const selectedSounds = selectedRows.map((rowIndex) => {
+      if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds2.length) {
+        return sounds2[rowIndex];
       }
       return "";
     });
@@ -59,11 +85,11 @@ const Editor: React.FC = () => {
 
   // Función para reproducir la pista de música
   const playMusicTrack = () => {
-    const selectedSounds1 = convertCellsToSounds(selectedRows1);
-    const selectedSounds2 = convertCellsToSounds(selectedRows2);
-    const selectedSounds3 = convertCellsToSounds(selectedRows3);
-    const selectedSounds4 = convertCellsToSounds(selectedRows4);
-    const selectedSounds5 = convertCellsToSounds(selectedRows5);
+    const selectedSounds1 = convertCellsToSounds1(selectedRows1);
+    const selectedSounds2 = convertCellsToSounds2(selectedRows2);
+    const selectedSounds3 = convertCellsToSounds1(selectedRows3);
+    const selectedSounds4 = convertCellsToSounds1(selectedRows4);
+    const selectedSounds5 = convertCellsToSounds1(selectedRows5);
 
     // Create Howl objects for each sound selected
     const soundObjects1 = selectedSounds1.map((soundFile) => new Howl({ src: [soundFile] }));
@@ -189,7 +215,7 @@ const Editor: React.FC = () => {
                 <div
                   key={rowIndex}
                   className={`${styles.cell} ${selectedRows1[colIndex] === rowIndex ? styles.selected : ""}`}
-                  onClick={() => handleRowSelect(setSelectedRows1, colIndex, rowIndex)}
+                  onClick={() => handleRowSelect1(setSelectedRows1, colIndex, rowIndex)}
                 ></div>
               ))}
             </div>
@@ -225,7 +251,7 @@ const Editor: React.FC = () => {
                 <div
                   key={rowIndex}
                   className={`${styles.cell} ${selectedRows2[colIndex] === rowIndex ? styles.selected2 : ""}`}
-                  onClick={() => handleRowSelect(setSelectedRows2, colIndex, rowIndex)}
+                  onClick={() => handleRowSelect2(setSelectedRows2, colIndex, rowIndex)}
                 ></div>
               ))}
             </div>
@@ -261,7 +287,7 @@ const Editor: React.FC = () => {
                 <div
                   key={rowIndex}
                   className={`${styles.cell} ${selectedRows3[colIndex] === rowIndex ? styles.selected3 : ""}`}
-                  onClick={() => handleRowSelect(setSelectedRows3, colIndex, rowIndex)}
+                  onClick={() => handleRowSelect1(setSelectedRows3, colIndex, rowIndex)}
                 ></div>
               ))}
             </div>
@@ -297,14 +323,14 @@ const Editor: React.FC = () => {
                 <div
                   key={rowIndex}
                   className={`${styles.cell} ${selectedRows4[colIndex] === rowIndex ? styles.selected4 : ""}`}
-                  onClick={() => handleRowSelect(setSelectedRows4, colIndex, rowIndex)}
+                  onClick={() => handleRowSelect1(setSelectedRows4, colIndex, rowIndex)}
                 ></div>
               ))}
             </div>
           ))}
         </div>
         <div className={styles.create}>
-          <img src="guitarra.png" alt="" />
+          <img src="bajo.png" alt="" />
           <div className={styles.options}>
             <button className={muteClass} onClick={handleMuteToggle}>
               M
@@ -333,7 +359,7 @@ const Editor: React.FC = () => {
                 <div
                   key={rowIndex}
                   className={`${styles.cell} ${selectedRows5[colIndex] === rowIndex ? styles.selected5 : ""}`}
-                  onClick={() => handleRowSelect(setSelectedRows5, colIndex, rowIndex)}
+                  onClick={() => handleRowSelect1(setSelectedRows5, colIndex, rowIndex)}
                 ></div>
               ))}
             </div>
