@@ -30,21 +30,48 @@ const Editor: React.FC = () => {
 
   // Definir los sonidos disponibles para cada fila
   const sounds1 = [
-  "sound1.mp3",
-  "sound2.mp3",
-  "sound3.mp3",
-  "sound4.mp3",
-  "sound5.mp3",
-  "sound6.mp3",
+  "drums1.mp3",
+  "drums2.mp3",
+  "drums3.mp3",
+  "drums4.mp3",
+  "drums5.mp3",
+  "drums6.mp3",
 ];
 
 const sounds2 = [
-  "guitar1.wav",
-  "guitar2.wav",
-  "guitar3.wav",
-  "guitar4.wav",
-  "guitar5.wav",
-  "guitar6.wav",
+  "guitar1.mp3",
+  "guitar2.mp3",
+  "guitar3.mp3",
+  "guitar4.mp3",
+  "guitar5.mp3",
+  "guitar6.mp3",
+];
+
+const sounds3 = [
+  "keyboard1.mp3",
+  "keyboard2.mp3",
+  "keyboard3.mp3",
+  "keyboard4.mp3",
+  "keyboard5.mp3",
+  "keyboard6.mp3",
+];
+
+const sounds4 = [
+  "cymbals1.mp3",
+  "cymbals2.mp3",
+  "cymbals3.mp3",
+  "cymbals4.mp3",
+  "cymbals5.mp3",
+  "cymbals6.mp3",
+];
+
+const sounds5 = [
+  "bass1.mp3",
+  "bass2.mp3",
+  "bass3.mp3",
+  "bass4.mp3",
+  "bass5.mp3",
+  "bass6.mp3",
 ];
 
   const handleRowSelect1 = (setSelectedRows1: React.Dispatch<React.SetStateAction<(number | null)[]>>, colIndex: number, rowIndex: number) => {
@@ -83,13 +110,43 @@ const sounds2 = [
     return selectedSounds;
   };
 
+  const convertCellsToSounds3 = (selectedRows: Array<number | null>) => {
+    const selectedSounds = selectedRows.map((rowIndex) => {
+      if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds3.length) {
+        return sounds3[rowIndex];
+      }
+      return "";
+    });
+    return selectedSounds;
+  };
+
+  const convertCellsToSounds4 = (selectedRows: Array<number | null>) => {
+    const selectedSounds = selectedRows.map((rowIndex) => {
+      if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds4.length) {
+        return sounds4[rowIndex];
+      }
+      return "";
+    });
+    return selectedSounds;
+  };
+
+  const convertCellsToSounds5 = (selectedRows: Array<number | null>) => {
+    const selectedSounds = selectedRows.map((rowIndex) => {
+      if (rowIndex !== null && rowIndex >= 0 && rowIndex < sounds5.length) {
+        return sounds5[rowIndex];
+      }
+      return "";
+    });
+    return selectedSounds;
+  };
+
   // Función para reproducir la pista de música
   const playMusicTrack = () => {
     const selectedSounds1 = convertCellsToSounds1(selectedRows1);
     const selectedSounds2 = convertCellsToSounds2(selectedRows2);
-    const selectedSounds3 = convertCellsToSounds1(selectedRows3);
-    const selectedSounds4 = convertCellsToSounds1(selectedRows4);
-    const selectedSounds5 = convertCellsToSounds1(selectedRows5);
+    const selectedSounds3 = convertCellsToSounds3(selectedRows3);
+    const selectedSounds4 = convertCellsToSounds4(selectedRows4);
+    const selectedSounds5 = convertCellsToSounds5(selectedRows5);
 
     // Create Howl objects for each sound selected
     const soundObjects1 = selectedSounds1.map((soundFile) => new Howl({ src: [soundFile] }));
