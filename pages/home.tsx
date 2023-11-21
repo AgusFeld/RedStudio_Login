@@ -44,12 +44,12 @@ const Home: React.FC = () => {
 
     const fetchUserSongs = async () => {
         try {
-        const response = await axios.get('/api/music'); // Ruta a tu API que devuelve las canciones del usuario
-        if (response.data) {
-            setSongs(response.data);
-        }
+            const response = await axios.get('/api/music'); // Ruta a tu API que devuelve las canciones del usuario
+            if (response.data) {
+                setSongs(response.data);
+            }
         } catch (error) {
-        console.error('Error fetching user songs:', error);
+            console.error('Error fetching user songs:', error);
         }
     };
 
@@ -100,11 +100,11 @@ const Home: React.FC = () => {
                                 <div className={styles.scrollableContent}>          
                                     {songs.map((song, index) => (
                                         <div key={index} className={styles.song}>
-                                        <button className={styles.subtract}>
-                                            <img src="Subtract.png" alt="" />
-                                        </button>
-                                        <div>Nombre: {song.name}</div>
-                                        <div>Género: {song.genre}</div>
+                                            <button className={styles.subtract}>
+                                                <img src="Subtract.png" alt="" />
+                                            </button>
+                                            <div>Nombre: {song.name}</div>
+                                            <div>Género: {song.genre}</div>
                                         </div>
                                     ))}
                                 </div>
