@@ -215,3 +215,9 @@
     margin-left: 2%;
     margin-top: -0.5%;
 }
+
+.name{
+    display: flex;
+    color: white;
+    margin-left: 10%;
+}
