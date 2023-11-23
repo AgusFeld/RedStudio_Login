@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useRouter } from "next/router";
 import styles from "./Login.module.css";
 import ViniloComponent from "./viniloComponent";
+import { setAuthToken } from './api/auth';
 
 const LoginPage: React.FC = () => {
   const router = useRouter();
@@ -31,10 +32,14 @@ const LoginPage: React.FC = () => {
         alert('Inicio de sesión exitoso');
         setEmail('');
         setPassword('');
+
+        const data = await response.json();
+        const token: string = data.token;
+        setAuthToken(token); // Almacena el token usando la función exportada
       }
       else {
-        const data = await response.json();
-        throw new Error(data.error || 'Ocurrió un error al iniciar sesión');
+        const data1 = await response.json();
+        throw new Error(data1.error || 'Ocurrió un error al iniciar sesión');
       }
     } catch (error) {
       console.error('Error al iniciar sesión:', error);

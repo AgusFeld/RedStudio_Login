@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import styles from "./home.module.css";
-import axios from 'axios';
+import { getAuthToken } from './api/auth';
 
 const Home: React.FC = () => {
+
 
     const [selectedImages, setSelectedImages] = useState([false, false, false, false, false]);
     const [songs, setSongs] = useState<Song[]>([]);
     const [filteredSongs, setFilteredSongs] = useState<Song[]>([]);
     const router = useRouter();
+    const token = getAuthToken();
 
 
     const toggleSelect = (index: number) => {
@@ -44,12 +46,27 @@ const Home: React.FC = () => {
 
     const fetchUserSongs = async () => {
         try {
-            const response = await axios.get('/api/music'); // Ruta a tu API que devuelve las canciones del usuario
-            if (response.data) {
-                setSongs(response.data);
+            const response = await fetch('/api/music', {
+                method: 'GET',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imdhc3BhckBnbWFpbC5jb20iLCJpYXQiOjE3MDA3MDYxNTB9.ZMVPTkKhO9D5cQfWxmk0QXeny6wWYHbyK6egCPHkzq0`
+                },
+            });
+        
+            console.log('Respuesta del servidor:', response);
+        
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Datos del usuario:', data);
+                setSongs(data.songs);
+            } else {
+                console.error('Error en la respuesta del servidor:', response);
+                router.push('/login');
             }
         } catch (error) {
-            console.error('Error fetching user songs:', error);
+            console.error('Error al obtener datos de usuario:', error);
+            router.push('/login');
         }
     };
 
@@ -97,16 +114,18 @@ const Home: React.FC = () => {
                         <div className={styles.scroll}>
                             <div className={styles.overflowContainer}>
                                 {/* Contenido que quieres que sea desplazable */}
-                                <div className={styles.scrollableContent}>          
-                                    {songs.map((song, index) => (
-                                        <div key={index} className={styles.song}>
-                                            <button className={styles.subtract}>
-                                                <img src="Subtract.png" alt="" />
-                                            </button>
-                                            <div>Nombre: {song.name}</div>
-                                            <div>Género: {song.genre}</div>
+                                <div className={styles.scrollableContent}>  
+                                    {songs && songs.length > 0 ? (
+                                        <div className={styles.song}>
+                                        <button className={styles.subtract}>
+                                            <img src="Subtract.png" alt="" />
+                                        </button>
+                                        <div>Nombre: {songs[0]?.name}</div>
+                                        <div>Género: {songs[0]?.genre}</div>
                                         </div>
-                                    ))}
+                                    ) : (
+                                        <div>No hay canciones disponibles</div>
+                                    )}                                          
                                 </div>
                             </div>
                         </div>
