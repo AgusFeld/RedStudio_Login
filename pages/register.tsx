@@ -26,7 +26,7 @@ const RegisterPage: React.FC = () => {
         }
 
         try {
-        const response = await fetch('/api/register', {
+        const response = await fetch('https://red-studio-login-j8hu.vercel.app/api/register', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
