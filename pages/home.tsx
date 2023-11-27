@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import styles from "./home.module.css";
-import { getAuthToken } from './api/auth';
 import { Howl, Howler } from 'howler';
 
 const Home: React.FC = () => {
@@ -11,7 +10,6 @@ const Home: React.FC = () => {
     const [songs, setSongs] = useState<Song[]>([]);
     const [filteredSongs, setFilteredSongs] = useState<Song[]>([]);
     const router = useRouter();
-    const token = getAuthToken();
     let arraySongs = [["", "", ""], ["", "", ""], ["", "", ""]]
 
 
