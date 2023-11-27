@@ -1,132 +1,128 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC');
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+SC");
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(180deg, #131313 100%, rgba(22, 22, 22, 0) 100%);
-  }
-
-  .formContainer{
-    position: relative;
-    width: 44%;
-    height: 89vh;
-    left: -29.8%;
-    
-    background: linear-gradient(180deg, #942727 0%, #220101 100%);
-    border-radius: 7px;
-  }
-
-  .containerVinilo{
-    position: absolute;
-    width: 33%;
-    height: 73%;
-    left: 47.5%;
-    
-    background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #131313 100%, rgba(22, 22, 22, 0) 100%);
 }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .inputGroup {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin-bottom: 3vh;
-  }
-  
-  .label {
-    margin-bottom: 3%;
-    margin-top: 5%;
-    font-size: 100%;
-    font-weight: bold;
-    color: white;
-  }
 
-  .login {
-    margin-bottom: 10px;
-    margin-top: 70px;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .input {
-    height: 48px;
-    width: 300px;
-    padding: 16px;
-    border: #0D0D0D;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #cfeaec;
-  }
-  
-  .forgotPassword {
-    margin-top: 16px;
-    font-size: 15px;
-    color: #666;
-  }
-  .forgotPassword:hover{
-    color: red;
-  }
-  
-  .registerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 16px;
-    font-size: 14px;
-  }
-  
-  .registerText {
-    margin-right: 8px;
-    color: #666;
-  }
-  .registerLink {
-    color: #666;
-    text-decoration: none;
-  }
+.formContainer {
+  position: relative;
+  width: 44%;
+  height: 89vh;
+  left: -29.8%;
 
-  .registerLink:hover{
-    color: red;
-  }
-
-  .submitbtn {
-    margin-top: 24px;
-    height: 48px;
-    width: 40%;
-    border-radius: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    text-transform: capitalize;
-    font-size: 25px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    background-color: rgb(219, 18, 18);
-    
-    cursor: pointer;
-    transition: background-color .4s;
-  }
-  
-  .submitbtn:hover {
-    background-color: rgb(180, 10, 10);
-  }
-
-
-.lengueta{
-    position: relative;
-    width: 43.8%;
-    height: 89vh;
-    left: 35%;
+  background: linear-gradient(180deg, #942727 0%, #220101 100%);
+  border-radius: 7px;
 }
- 
 
+.containerVinilo {
+  position: absolute;
+  width: 33%;
+  height: 73%;
+  left: 47.5%;
 
+  background: transparent;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 3vh;
+}
+
+.label {
+  margin-bottom: 3%;
+  margin-top: 5%;
+  font-size: 100%;
+  font-weight: bold;
+  color: white;
+}
+
+.login {
+  margin-bottom: 10px;
+  margin-top: 70px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+.input {
+  height: 48px;
+  width: 300px;
+  padding: 16px;
+  border: #0d0d0d;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #cfeaec;
+}
+
+.forgotPassword {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #666;
+}
+.forgotPassword:hover {
+  color: red;
+}
+
+.registerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.registerText {
+  margin-right: 8px;
+  color: #666;
+}
+.registerLink {
+  color: #666;
+  text-decoration: none;
+}
+
+.registerLink:hover {
+  color: red;
+}
+
+.submitbtn {
+  margin-top: 24px;
+  height: 48px;
+  width: 40%;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.submitbtn:hover {
+  background-color: rgb(180, 10, 10);
+}
+
+.lengueta {
+  position: relative;
+  width: 43.8%;
+  height: 89vh;
+  left: 35%;
+}
