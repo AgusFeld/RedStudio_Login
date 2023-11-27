@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import styles from "./Login.module.css";
 import ViniloComponent from "./viniloComponent";
 import Cookies from "js-cookie";
-import { useAuth } from "./api/authContext";
 
 const LoginPage: React.FC = () => {
   const router = useRouter();
@@ -16,7 +15,6 @@ const LoginPage: React.FC = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const login = useAuth();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -37,7 +35,6 @@ const LoginPage: React.FC = () => {
         const data = await response.json();
         const token: string = data.token;
         Cookies.set("token", token, { path: "/" });
-        login(true);
       } else {
         const data1 = await response.json();
         throw new Error(data1.error || "Ocurrió un error al iniciar sesión");
