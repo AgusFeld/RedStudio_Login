@@ -35,6 +35,7 @@ const LoginPage: React.FC = () => {
         const data = await response.json();
         const token: string = data.token;
         Cookies.set("token", token, { path: "/" });
+        router.push("/");
       } else {
         const data1 = await response.json();
         throw new Error(data1.error || "Ocurrió un error al iniciar sesión");

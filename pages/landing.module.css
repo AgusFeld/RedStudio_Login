@@ -1,213 +1,220 @@
-.container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 450vh;
-    overflow: hidden;
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 450vh;
+  overflow: hidden;
 }
 
-.bar{
-    display: flex;
-    position: fixed;
-    align-items: center;
-    height: 10%;
-    width: 100%;
-    background: #1A1919;
-    top: 0;
-    z-index: 999;
+.bar {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  background: #1a1919;
+  top: 0;
+  z-index: 999;
 }
 
-.logo{
-    scale: 0.6;
-    margin-left: -2%;
+.logo {
+  scale: 0.6;
+  margin-left: -2%;
 }
 
-.text{
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
+.text {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
 }
 
-.text1{
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
+.text1 {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
 }
 
-.text:hover{
-    color: red;
+.text:hover {
+  color: red;
 }
 
-.text1:hover{
-    color: red;
+.text1:hover {
+  color: red;
 }
 
 .boton {
-    margin-left: 3%;
-    height: 100%;
-    width: 100%;
-    border-radius: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    text-transform: capitalize;
-    font-size: 17px;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    background-color: rgb(219, 18, 18);
-    
-    cursor: pointer;
-    transition: background-color .4s;
-  }
-  
-  .boton:hover {
-    background-color: rgb(180, 10, 10);
-  }
+  margin-left: 3%;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: rgb(219, 18, 18);
 
-  .btn {
-    height: 60px;
-    width: 17%;
-    border-radius: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    text-transform: capitalize;
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    background-color: rgb(219, 18, 18);
-    
-    cursor: pointer;
-    transition: background-color .4s;
-  }
-  
-  .btn:hover {
-    background-color: rgb(180, 10, 10);
-  }
-
-.background{
-    height: 100%;
-    width: 100%;
-    margin-bottom: 0;
-    background: #111111;
+  cursor: pointer;
+  transition: background-color 0.4s;
 }
 
-.img1{
-    margin-bottom: 0%;
-    margin-top: -10%;
-    margin-left: 19%;
-    display: block;
-    scale: 0.4;
+.boton:hover {
+  background-color: rgb(180, 10, 10);
 }
 
-.img2{
-    margin-top: -13%;
-    margin-left: -26%; 
-    display: block;
-    scale: 0.4;
+.btn {
+  height: 60px;
+  width: 17%;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgb(219, 18, 18);
+
+  cursor: pointer;
+  transition: background-color 0.4s;
 }
 
-.img3{
-    margin-top: -75%;
-    margin-left: 24%; 
-    display: block;
-    scale: 0.4;
+.btn:hover {
+  background-color: rgb(180, 10, 10);
 }
 
-.img4{
-    margin-top: -53%;
-    margin-left: 0%; 
-    display: block;
-    scale: 0.4;
+.background {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0;
+  background: #111111;
 }
 
-.img5{
-    margin-top: -40%;
-    margin-left: 22%; 
-    display: block;
-    scale: 0.4;
+.img1 {
+  margin-bottom: 0%;
+  margin-top: -10%;
+  margin-left: 19%;
+  display: block;
+  scale: 0.4;
 }
 
-.img6{
-    margin-top: -45%;
-    margin-left: -17%; 
-    display: block;
-    scale: 0.4;
+.img2 {
+  margin-top: -13%;
+  margin-left: -26%;
+  display: block;
+  scale: 0.4;
 }
 
-.div1{
-    margin-left: 3%;
-    height: 60%;
-    width: 9%;
+.img3 {
+  margin-top: -75%;
+  margin-left: 24%;
+  display: block;
+  scale: 0.4;
 }
 
-.div2{
-    margin-left: 55%;
+.img4 {
+  margin-top: -53%;
+  margin-left: 0%;
+  display: block;
+  scale: 0.4;
 }
 
-.div3{
-    margin-left: 3%;
+.img5 {
+  margin-top: -40%;
+  margin-left: 22%;
+  display: block;
+  scale: 0.4;
 }
 
-.div4{
-    margin-left: 320px;
-    margin-top: -370px;
+.img6 {
+  margin-top: -45%;
+  margin-left: -17%;
+  display: block;
+  scale: 0.4;
 }
 
-.div5{
-    margin-left: 83%;
-    margin-top: -30%;
-    width: 1000px;
+.div1 {
+  height: 60%;
+  width: 12%;
+}
+
+.div2 {
+  margin-left: 2%;
+  width: 10%;
+}
+
+.div3 {
+  margin-left: 3%;
+  width: 10%;
+}
+
+.div4 {
+  margin-left: 320px;
+  margin-top: -370px;
+}
+
+.div5 {
+  margin-left: 83%;
+  margin-top: -30%;
+  width: 1000px;
+}
+
+.div6 {
+  height: 60%;
+  width: 12%;
+  margin-left: 55%;
 }
 
 .foot {
-    display: flex;
-    position: relative;
-    margin-top: 17%;
-    left: 0;
-    height: 17%;
-    width: 100%;
-    background-image: url("/foot.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  display: flex;
+  position: relative;
+  margin-top: 17%;
+  left: 0;
+  height: 17%;
+  width: 100%;
+  background-image: url("/foot.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .column {
-    margin-top: 13%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    color: white;
-  }
-  
-  .column {
-    width: 33.33%;
-  }
-  
-  .column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .column li {
-    margin-bottom: 10vh;
-  }
+  margin-top: 13%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
 
-  .txt{
-    margin-left: 0%;
-    margin-top: -20%;
-    color: white;
-  }
+.column {
+  width: 33.33%;
+}
 
-  .footerText {
-    position: absolute;
-    bottom: 3%;
-    left: 1%;
-    color: white;
-  }
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column li {
+  margin-bottom: 10vh;
+}
+
+.txt {
+  margin-left: 0%;
+  margin-top: -20%;
+  color: white;
+}
+
+.footerText {
+  position: absolute;
+  bottom: 3%;
+  left: 1%;
+  color: white;
+}
